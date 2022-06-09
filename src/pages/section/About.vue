@@ -4,7 +4,7 @@
             <div class="row-1">
                 <div class="content-img">
                     <div class="img">
-                        <img class="img-circular" src="https://res.cloudinary.com/ianahernandez/image/upload/v1616860528/profile_removebg_preview_6b1896c48a.jpg">
+                        <img class="img-circular" src="https://res.cloudinary.com/ddxgl2pr9/image/upload/c_scale,h_400,w_300/v1654640717/Portafolio/IMG_20220607_181534_1_yvk1t1.jpg">
                         <div class="capa"></div>
                     </div>
                 </div>
@@ -12,20 +12,20 @@
                     <h3 class="title">Jhon Contreras</h3>
                     <div class="box-container">
                         <div class="box">
-                            <span class="icon fa-solid fa-graduation-cap" /> <span class="text"> Ingenería en informática</span>
+                            <span class="icon fa-solid fa-graduation-cap" /> <span class="text-light"> Ingenería en informática</span>
                         </div>
                         <div class="box">
-                            <span class="icon fa-solid fa-briefcase" /> <span class="text"> Full-stack developer</span>
+                            <span class="icon fa-solid fa-briefcase" /> <span class="text-light">Software developer</span>
                         </div>
                         <div class="box">
-                            <span class="icon fa-solid fa-location-dot" /> <span class="text"> Barquisimeto, Venezuela</span>
+                            <span class="icon fa-solid fa-location-dot" /> <span class="text-light"> Barquisimeto, Venezuela</span>
                         </div>
                     </div>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet non dolorem illum. Rem qui ratione nostrum quod nesciunt, natus adipisci veniam laborum atque odio neque amet autem aspernatur delectus at.</p>
+                    <p class="text-light">Hola, soy Jhon, Ingeniero en informática con 2 años de experiencia como desarrollador full-stack, desarrollando aplicaciones escalables, soluciones informáticas y optimización de algoritmos, aplicando principios de programación. Me caracterizo por ser una persona autodidacta, interesado en aprender nuevas tecnologías para el desarrollo de software, dispuesto a afrontar cualquier tipo de retos que me ayuden a crecer como profesional.</p>
                     <div class="content-action">
                         <span class="icon fa-brands fas-graduation-cap"></span>
                         <button
-                            class="btn"
+                            class="btn btn__primary"
                             type="button"
                         >
                             <span class="icon fa-solid fa-download"></span> Descargar CV
@@ -55,8 +55,8 @@ export default {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                position: relative;
                 .img{
-                    background: #ffffff;
                     border-radius: 10%;
                     width: 200px;
                     height: 200px;
@@ -72,7 +72,6 @@ export default {
                     gap:1.5rem;
                     padding: 0.3rem 0;
                     margin-bottom: 2rem;
-                    margin-top: 2rem;
                     .box{
                         flex: 1 1 20rem;
                         display: flex;
@@ -86,16 +85,6 @@ export default {
                             font-size: 1.5rem;
                         }
                     }
-                }
-                .title{
-                    color: var(--text-dark-900);
-                    opacity: 87%;
-                    font-size: 2.5rem;
-                }
-                .text{
-                    color: var(--text-dark-900);
-                    opacity: 60%;
-                    font-size: 1.7rem;
                 }
                 .content-action {
                     margin-top: 2rem;

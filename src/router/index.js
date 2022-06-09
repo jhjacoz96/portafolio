@@ -3,24 +3,47 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
   {
     path: '/',
-    name: 'inicio',
+    name: 'Inicio',
     component: () => import('../pages/section/Home.vue'),
   },
   {
     path: '/about',
-    name: 'conoceme',
+    name: 'Conoceme',
     component: () => import('../pages/section/About.vue'),
   },
   {
     path: '/skill',
-    name: 'experiencia',
+    name: 'Tecnolígas',
     component: () => import('../pages/section/Skill.vue'),
+  },
+  {
+    path: '/experience',
+    name: 'Experiencia',
+    component: () => import('../pages/section/Experience.vue'),
+  },
+  {
+    path: '/portafolio',
+    name: 'Portafolio',
+    component: () => import('../pages/section/Portafolio.vue'),
+
+  },
+  {
+    path: '/portafolio/:id',
+    name: 'Detalle de portafolio',
+    component: () => import('../pages/section/PortafolioDetails.vue'),
+  },
+  {
+    path: '/contact',
+    name: 'Contacto',
+    component: () => import('../pages/section/Contact.vue'),
   },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'exact-active',
 })
 
 export default router

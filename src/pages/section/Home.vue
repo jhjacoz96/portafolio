@@ -3,25 +3,25 @@
         <div class="container">
             <div class="row">
                 <div class="col__info">
-                    <h5 class="hello">Hola, soy</h5>
-                    <h3>Jhon Contreras</h3>
-                    <p class="profession" style="margin:0;">
-                        <span class="typing">{{ typeValue }}</span>
-                        <span
+                    <h5>Hola, mi nombre es</h5>
+                    <h1>Jhon Contreras.</h1>
+                    <div class="profession" style="margin:0;">
+                        <h1 class="typing">{{ typeValue }}</h1>
+                        <h1
                             class="cursor"
                             :class="{'typing': typeStatus}"
-                        >&nbsp;</span>
-                    </p>
-                    <p class="info">
-                        {{ info }}
-                    </p>
+                        >&nbsp;</h1>
+                    </div>
+                    <div class="info">
+                        <p>{{ info }}</p>
+                    </div>
                 </div>
-                <div class="col__img">
+                <!-- <div class="col__img">
                     <div class="me">
                         <img alt="me" :src="require('@/assets/profile.png')">
                     </div>
+                </div> -->
                 </div>
-            </div>
         </div>
     </section>
 </template>
@@ -34,13 +34,13 @@ export default {
         return {
             typeValue: '',
             typeStatus: false,
-            typeArray: ['Front-End Developer','Back-end Delevoper', 'Javascript Developer'],
+            typeArray: ['Software Engineer','Full-Stack Developer', 'Javascript Developer'],
             typingSpeed: 200,
             erasingSpeed: 100,
             newTextDelay: 1000,
             typeArrayIndex: 0,
             charIndex: 0,
-            info: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, tempore quo nulla fugit fugiat recusandae sint eveniet quibusdam obcaecati optio alias iste doloribus. Sint neque consequatur atque dolore perferendis nemo!...',
+            info: 'Soy un ingeniero en informática dedicado al desarrollo de software, con experiencia en el desarrollo full-stack con distintas tecnologías ',
         }
     },
     methods: {
@@ -81,66 +81,61 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
     .row {
         display: flex;
-        align-items: center;
         flex-wrap: wrap;
-        gap: 1.5rem;
+        gap: 2rem;
         
         .col__info{
             flex: 1 1 30rem;
-            .hello {
-                font-size: 2rem;
-                color: var(--text-dark-900);
-                margin-bottom: 1.5rem;
-            }
-            h3 {
-                font-size: 3rem;
-                color: var(--text-dark-900);
-            }
+            text-align: center;
+            // h3 {
+            //     font-size: 3rem;
+            //     color: var(--text-dark-900);
+            // }
         }
 
         .col__img{
-            flex: 1 1 40rem;
+            flex: 1 1 50rem;
             position: relative;
-            .me{
-                background: linear-gradient(var(--main-color), transparent);
-                width: 70%;
-                height: 40rem;
-                position: absolute;
-                left: calc(50% - 18rem);
-                border-radius: 16rem 16rem 0 0;
-                overflow: hidden;
-                padding: 5rem 1rem 1rem 1.5rem;
-            }
         }
 
     }
 
+    .me{
+        background: linear-gradient(var(--main-color), transparent);
+        width: 22rem;
+        height: 30rem;
+        position: absolute;
+        left: calc(50% - 11rem);
+        border-radius: 16rem 16rem 0 0;
+        overflow: hidden;
+        padding: 5rem 1rem 1rem 1.5rem;
+    }
+
+    h5{
+        font-size: 1.7rem;
+        color: var(--main-color);
+    }
+
+    h1{
+        font-family: 'Poppins', sans-serif;
+        font-size: 5.5rem;
+        font-weight: bold;
+        color: var(--text-dark-700);
+    }
+
     .profession {
-        font-size: 2.5rem;
-        color: var(--text-dark-900);
         margin-bottom: 1.5rem;
     }
 
     .info{
+        text-align: center;
         margin-top: 1.5rem;
         font-size: 1.7rem;
         color: var(--text-dark-100);
+        padding: 0 15rem;
     }
-
-    /* h3.hello{
-        font-size: 28px;
-        margin: 15px 0;
-    }
-
-    h3.hello span{
-        font-family: 'Clicker Script', cursive;
-        font-size: 30px;
-        font-weight: 700;
-        color: var(--main-color);
-    } */
 
     .profession{
         font-size: 30px;
@@ -148,7 +143,8 @@ export default {
     }
 
     .typing{
-        color: var(--main-color);
+        color: var(--text-dark-100);
+        display: inline-block;
         animation: none ;
     }
 
@@ -156,13 +152,13 @@ export default {
         display: inline-block;
         margin-left: 3px;
         width: 4px;
-        background-color: var(--main-color);
+        background-color: var(--text-dark-100);
         animation: cursorBlink 1s infinite;
     }
 
     @keyframes cursorBlink {
         49% {
-            background-color: var(--main-color);
+            background-color: var(--text-dark-100);
         }
         50% {
             background-color: transparent;
@@ -204,17 +200,27 @@ export default {
         50% { border-color: transparent; }
     } */
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 600px) {
         .col__info{
-            flex: 1 1 100%;
-            max-width: 100%;
             text-align: center;
         }
-        .col__img {
-            flex: 1 1 100%;
-            max-width: 100%;
+        // .col__img {
+        //     flex: 1 1 100%;
+        //     max-width: 100%;
+        //     text-align: center;
+        //     margin-top: 5rem;
+        // }
+
+        h1{
+            font-size: 4rem;
+        }
+        .info{
+            padding: 0 2rem;
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        .col__info{
             text-align: center;
-            margin-top: 5rem;
         }
     }
 

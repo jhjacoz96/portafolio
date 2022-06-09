@@ -1,16 +1,21 @@
 <template>
-  <div>
-    <LayoutDrawer v-model:activeDrawer="activeDrawer"/>
+  <LayoutDrawer v-model:activeDrawer="activeDrawer"/>
+  <div
+    class="layout"
+    :class="{ layout__opacity: activeDrawer }"
+  >
     <LayoutHeader v-model:activeDrawer="activeDrawer"/>
-    <div class="cursor-1"/>
-    <div class="cursor-2"/>
     <LayoutView />
+    <LayoutFooter />
   </div>
+  <div class="cursor-1"/>
+  <div class="cursor-2"/>
 </template>
 
 <script>
   import LayoutDrawer from './pages/layout/LayoutDrawer.vue'
   import LayoutHeader from './pages/layout/LayoutHeader.vue'
+  import LayoutFooter from './pages/layout/LayoutFooter.vue'
   import LayoutView from './pages/layout/LayoutView.vue'
 
 export default {
@@ -19,6 +24,7 @@ export default {
     LayoutDrawer,
     LayoutHeader,
     LayoutView,
+    LayoutFooter,
   },
   data() {
     return {
@@ -68,9 +74,11 @@ export default {
     --text-dark-100: rgba( 255, 255, 255, 0.6);
     --text-dark-50: rgba( 255, 255, 255, 0.38);
 
-    --container-with-lg: 75%;
-    --container-with-md: 86%;
+    --container-with-lg: 90%;
+    --container-with-md: 90%;
     --container-with-sm: 90%;
+
+    --transition: all 400ms ease; 
   }
   
   * {
@@ -87,43 +95,84 @@ export default {
 
   html {
     font-size:  62.5%;
-    overflow: hidden;
     scroll-behavior: smooth;
   }
 
+  ::-webkit-scrollbar{
+    // width: 3px;
+    // height: 16px;
+    display: none;
+  }
+
+  /*::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 5px;
+    border: 4px solid var(--main-color);
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #cbd5e0;
+  }*/
+
   body {
     background: var(--bg-dark-900);
-    padding-left: 30rem;
+    padding-left: 25rem;
     color: var(text-dark-900);
   }
 
-  section{
-    padding: 2rem 5%;
+  .layout__opacity{
+    opacity: .5!important;
+  }
+  
+  .layout{
     min-height: 100vh;
+    height: 100%;
+    position: relative;
+  }
+  section{
+    padding: 2rem 0 14rem;
     margin-top: 2rem;
+    display: flex;
+    height: 100%;
+    justify-content: center;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--text-dark-900);
+  h1, h2, h3, h4, h5 {
+    color: var(--text-dark-900); 
     font-weight: 500;
   }
-
   h1 {
     font-size: 2.5rem;
   }
 
   .container {
-    // max-width: var(--container-with-lg);
-    // margin: auto;
-    margin-top: 5rem;
+    width: var(--container-with-lg);
   }
 
   section > h2, section > h5 {
     color: var(--text-dark-700);
   }
 
+  .text{
+    color: var(--text-dark-900);
+    font-size: 1.7rem;
+  }
   .text-light{
     color: var(--text-dark-100);
+    font-size: 1.7rem;
+  }
+
+  .text-light-small{
+    color: var(--text-dark-50);
+    font-size: 1.7rem;
+  }
+
+  .title{
+      color: var(--text-dark-700);
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
   }
 
   img{
@@ -168,44 +217,67 @@ export default {
   }
 
   .btn {
-        position: relative;
-        overflow: hidden;
-        min-height: 60px;
-        background-color: transparent;
-        border: 2px solid var(--main-color);
-        padding: 10px 25px;
-        cursor: pointer;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: var(--main-color);
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 1.8rem;
-        .icon{
-            margin-right: 6px;
-        }
-        transition: var(--default-transition-time) background-color;
-        &:after{
-            content: '';
-            position: absolute;
-            left: -200px;
-            width: 80px;
-            height: 100%;
-            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0), 100%);
-            opacity: 0.4;
-            transform: rotate(30deg);
-            transition: var(--default-transition-time) all;
-        }
-        &:hover{
-            background-color: var(--main-color);
-            color: var(--bg-dark-900);
-            transition:  var(--default-transition-time);
-        }
-        &:hover:after{
-            left: calc(100% + 200px);
-        }
+    width: max-content;
+    display: block;
+    padding: 0.75rem 1.2rem;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    transition: var(--transition);
+    background: transparent;
+  }
+
+  .btn:hover {
+    background: var(--text-dark-900);
+    color: var(--bg-dark-900);
+    border-color: transparent;
+  }
+
+  .btn__primary {
+    background-color: var(--main-color);
+    color: var(--bg-dark-900);
+  }
+
+  /*.btn {
+    position: relative;
+    overflow: hidden;
+    min-height: 60px;
+    background-color: transparent;
+    border: 2px solid var(--main-color);
+    padding: 10px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--main-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    .icon{
+        margin-right: 6px;
     }
+    transition: var(--default-transition-time) background-color;
+    &:after{
+        content: '';
+        position: absolute;
+        left: -200px;
+        width: 80px;
+        height: 100%;
+        background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0), 100%);
+        opacity: 0.4;
+        transform: rotate(30deg);
+        transition: var(--default-transition-time) all;
+    }
+    &:hover{
+        background-color: var(--main-color);
+        color: var(--bg-dark-900);
+        transition:  var(--default-transition-time);
+    }
+    &:hover:after{
+        left: calc(100% + 200px);
+    }
+  }*/
 
 
 
@@ -223,13 +295,8 @@ export default {
       }
 
       .container{
-        // max-width: var(--container-with-md);
-        margin-top: 6rem;
-        // margin: auto;
-      }
-
-      section{
-        margin-top: 6rem;
+        width: var(--container-with-md);
+        // margin-top: 3rem;
       }
 
     }
@@ -243,7 +310,7 @@ export default {
       }
 
       header {
-        width: 50%;
+        width: 90%;
       }
 
       body {
@@ -251,9 +318,9 @@ export default {
       }
 
       .container{
-        // max-width: var(--container-with-sm);
-        margin-top: 5rem;
-        // margin: auto;
+        width: var(--container-with-sm);
+        // margin-top: 2.5rem;
+        //margin: auto;
       }
 
       section > h2{
@@ -273,6 +340,8 @@ export default {
     //   }
 
     // }
-
+    h1{
+      color: var(--bg-dark-variant);
+;    }
 
 </style>

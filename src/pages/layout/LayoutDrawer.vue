@@ -13,14 +13,15 @@
             <nav class="navbar">
                 <router-link to="/">Inicio</router-link> 
                 <router-link to="/about">Sobre mi</router-link> 
-                <router-link to="/skill">Experiencia</router-link>
+                <router-link to="/skill">Tecnologías</router-link>
+                <router-link to="/experience">Experiencia</router-link>
                 <router-link to="/portafolio">Portafolio</router-link>
                 <router-link to="/contact">Contacto</router-link>
             </nav>
-            <div class="follow">
+            <!-- <div class="follow">
                 <a href="a" class="fa-brands fa-github"></a>
                 <a href="a" class="fa-brands fa-linkedin"></a>
-            </div>
+            </div> -->
         </header>
     </div>
 </template>
@@ -45,7 +46,7 @@ export default {
     },
 }
 </script>
-<style>
+<style scoped>
     header {
         position: fixed;
         top: 0;
@@ -56,19 +57,19 @@ export default {
         align-items: center;
         border-end-end-radius: 40px;
         border-start-end-radius: 40px;
-        justify-content: space-between;
+        justify-content: flex-start;
         box-shadow: 3px 3px 15px rgb(#122640 / 41%);
         z-index: 1000;
         flex-flow: column;
         padding: 8rem 2rem;
-        width: 30rem;
+        width: 25rem;
         text-align: center;
     }
 
     header .logo{
         text-transform: uppercase;
         color: var(--text-dark-900);
-        font-size: 2.5rem;
+        font-size: 2rem;
         font-weight: bolder;
     }
 
@@ -77,21 +78,31 @@ export default {
         color: var(--main-color);
     }
 
+    header .navbar {
+        margin-top: 4rem;
+        min-height: 280px;
+        width: 100%;
+    }
     header .navbar a{
         display: block;
-        font-size: 2rem;
+        font-size: 1.7rem;
         color: var(--text-dark-900);
         margin: 2rem 0;
         cursor: pointer;
+        width: 100%;
     }
 
     header .navbar a:hover {
         letter-spacing: .2rem;
         color: var(--main-color);
     }
+    header .navbar .active, .exact-active {
+        letter-spacing: .2rem;
+        color: var(--main-color);
+    }
 
     header .follow a {
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: #fff;
         margin: 0 .7rem; 
     }
@@ -109,6 +120,7 @@ export default {
         
         header {
             left: -120%;
+            width: 30rem;
         }
 
         .active {

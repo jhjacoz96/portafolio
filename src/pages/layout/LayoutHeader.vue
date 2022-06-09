@@ -1,6 +1,12 @@
 <template>
     <div class="header">
-        <h1 class="header__heading">{{ $route.params.name }}</h1>
+        <h4
+            class="header__heading"
+            :class="{visibility: $route.name === 'Inicio'}"
+
+        >
+            {{ $route.name }}
+        </h4>
         <div class="header__options">
             <button
                 id="menu-bars"
@@ -58,10 +64,11 @@ export default {
     }
 
     .header__heading{
-            font-size: 3rem;
+            font-size: 2rem;
             color: var(--text-dark-900);
             text-transform: uppercase;
             position: relative;
+            font-weight: bold;
         &:before{
             content: '';
             position: absolute;
@@ -84,6 +91,10 @@ export default {
     }
 
     /* Media queries */
+
+    .visibility{
+        visibility: hidden;
+    }
 
     @media screen and (max-width: 1024px) {
         

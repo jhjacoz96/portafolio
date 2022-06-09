@@ -1,7 +1,6 @@
 <template>
     <section class="skill">
-        <h1 class="heading">Experiencia</h1>
-        <div class="containerr">
+        <div class="container">
             <div class="row">
                 <div class="col__experience">
                     <div class="card__experience">
@@ -17,7 +16,7 @@
                                 <span class="items__container__icon fa-solid fa-medal" />
                                 <div class="items__container__item">
                                     <h4>{{ item.name }}</h4>
-                                    <small class="text-light">{{ item.level }}</small>
+                                    <small class="text-light-small">{{ item.level }}</small>
                                 </div>
                             </article>
                         </div>
@@ -75,31 +74,6 @@ export default {
 
 <style lang="scss" scoped>
     .skill{
-        .heading{
-            font-size: 3rem;
-            color: var(--text-dark-900);
-            text-transform: uppercase;
-            position: relative;
-        }
-        .heading::before{
-            content: '';
-            position: absolute;
-            background-color: var(--main-color);
-            width: 50px;
-            height: 4px;
-            top:100%;
-            left: 0;
-        }
-        .heading::after{
-            content: '';
-            position: absolute;
-            background-color:var(--main-color);
-            width: 25px;
-            height: 4px;
-            top:100%;
-            left: 0;
-            margin-top: 8px;
-        }
         .row{
             display: flex;
             flex-wrap: wrap;
@@ -145,10 +119,7 @@ export default {
                     .items__container__item{
                         color: var(--text-dark-900);
                         font-size: 1.7rem;
-                        opacity: 60%;    
-                        .text-light{
-                            opacity: 38%;
-                        }                   
+                        opacity: 60%;         
                     }
                 }
             }
