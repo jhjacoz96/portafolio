@@ -136,4 +136,10 @@ export default {
         color: var(--main-color);
     }
 
+      @media screen and (max-width: 600px) {
+          .card{
+              padding: 2rem 3rem; 
+          }
+      }
+
 </style>

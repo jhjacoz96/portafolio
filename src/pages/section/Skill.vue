@@ -15,7 +15,7 @@
                             >
                                 <span class="items__container__icon fa-solid fa-medal" />
                                 <div class="items__container__item">
-                                    <h4>{{ item.name }}</h4>
+                                    <h4 class="text-light">{{ item.name }}</h4>
                                     <small class="text-light-small">{{ item.level }}</small>
                                 </div>
                             </article>
@@ -35,8 +35,8 @@
                             >
                                 <span class="items__container__icon fa-solid fa-medal" />
                                 <div class="items__container__item">
-                                    <h4>{{ item.name }}</h4>
-                                    <small class="text-light">{{ item.level }}</small>
+                                    <h4 class="text-light">{{ item.name }}</h4>
+                                    <small class="text-light-small">{{ item.level }}</small>
                                 </div>
                             </article>
                         </div>
@@ -116,10 +116,7 @@ export default {
                         font-size: 1.5rem;
                         margin-top: 5px;
                     }
-                    .items__container__item{
-                        color: var(--text-dark-900);
-                        font-size: 1.7rem;
-                        opacity: 60%;         
+                    .items__container__item{   
                     }
                 }
             }
@@ -127,6 +124,14 @@ export default {
                 background-color: transparent;
                 border: 1px solid var(--bg-dark-100);
             }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .col__experience{
+          .card__experience{
+            padding: 2rem 3rem; 
+          }
         }
     }
 

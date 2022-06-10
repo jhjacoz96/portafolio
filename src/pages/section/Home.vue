@@ -15,6 +15,15 @@
                     <div class="info">
                         <p>{{ info }}</p>
                     </div>
+                    <div class="actions">
+                        <button
+                            class="btn"
+                        >Desargar cv</button>
+                        <button
+                            class="btn btn__primary"
+                            @click="$router.push('/about')"
+                        >Sobre mi</button>
+                    </div>
                 </div>
                 <!-- <div class="col__img">
                     <div class="me">
@@ -154,6 +163,13 @@ export default {
         width: 4px;
         background-color: var(--text-dark-100);
         animation: cursorBlink 1s infinite;
+    }
+
+    .actions{
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
     }
 
     @keyframes cursorBlink {

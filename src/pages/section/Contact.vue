@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col__contact">
-                    <!-- <div class="card">
+                    <div class="card">
                         <div class="card__container">
                             <span class="text fa-brands fa-whatsapp" />
                             <p class="text">Whatsapp</p>
                             <p class="text-light">(+58)414-9568372</p>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="card">
                         <div class="card__container">
                             <span class="text fa-solid fa-envelope" />
@@ -39,20 +39,21 @@
                         <input
                             type="text"
                             name="name"
-                            placeholder="Nombre y apellido"
+                            placeholder="Nombre y apellido *"
                             required
                         >
                         <input
                             type="email"
                             name="email"
-                            placeholder="Correo electrónico"
+                            placeholder="Correo electrónico *"
                             required
                         >
                         <input
                             type="textarea"
-                            name="mesagge"
-                            placeholder="Mensaje"
+                            name="message"
+                            placeholder="Mensaje *"
                             row="7"
+                            required
                         >
                         <button
                             type="submit"

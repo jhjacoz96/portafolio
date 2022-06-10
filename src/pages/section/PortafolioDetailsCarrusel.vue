@@ -118,4 +118,10 @@ export default {
         overflow: hidden;
         background-color: #000;
     }
+
+    @media screen and (max-width: 600px) {
+        .carrusel{
+            margin-top: 2rem;
+        }
+    }
 </style>

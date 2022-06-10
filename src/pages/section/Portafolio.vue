@@ -7,7 +7,19 @@
                     :key="index"
                     class="col"
                 >
-                    <div class="card">
+                    <router-link :to="`/portafolio/${item.id}`">
+                        <div class="card">
+                            <img :src="item.img" :alt="item.title">
+                            <h6 class="card__title">{{ item.type }}</h6>
+                            <div class="card__hover">
+                                <h4 class="title">{{ item.title }}</h4>
+                                <p class="text-light">
+                                    {{ spliceText(item.description) }}
+                                </p>
+                            </div>
+                        </div>
+                    </router-link> 
+                    <!-- <div class="card">
                         <div class="card__container">
                             <div class="card__container-image">
                                 <img :src="item.img" :alt="item.title">
@@ -26,7 +38,7 @@
                                 >Detalle</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -39,11 +51,17 @@ export default {
     data() {
         return {
             experiences: [
-                {id: 1, img: 'https://picsum.photos/id/1032/900/400', title: 'Aplicación web', url: 'https://app.hcaguanare.com', details: ''},
-                {id: 2, img: 'https://picsum.photos/id/1033/900/400', title: 'Aplicación web', url: '', details: ''},
-                {id: 3, img: 'https://picsum.photos/id/1036/900/400', title: 'Pwa', url: '', details: 'https://app.hcaguanare.com'},
+                {id: 2, img: 'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1654750007/Portafolio/sigo-8_bddanv.png', title: 'SIGO', type: 'Pwa', process: '', url: '', description: 'Sigo es una aplicación web progresiva encargada gestionar pedidos, compras, seguimiento de ventas y control de inventario, además de esto, permite administrar usuarios, roles, productos y categorías. Los clientes pueden ingresar y ver el catálago disponible y realizar pedidos mediante un carrito de compra.', skill: ['Vuejs', 'Vuetify', 'Nodejs', 'Express', 'Mysql']},
+                {id: 1, img: 'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1654747426/Portafolio/khatani-1_jngaxp.png', title: 'KA-THANI', type: 'Aplicación web', process: '', url: '', description: 'Kathani es una aplicación web dirigida al sector salud del Ecuador. Esta solución informatica permite getionar las fichas familiares, obstetrias y neonatologías de los pacientes afiliados a un centro de salud, donde los trabajadores de salud podrán realizar un control y seguimiento de los pacientes mediantes las fichas registradas. Además de esto,posee un módulo de datos basicos donde se podrás administrar estos. Posee modulos de reportes estadisticos y estructurdos en formatos pdf.', skill: ['Angular', 'Rxjs', 'Material Design', 'Laravel', 'Mysql']},
+                {id: 3, img: 'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1654750017/Portafolio/hca-1_dmecsh.png', title: 'PANEL DE ADMINISTRACIÓN HCA', type: 'Pwa', process: '', url: 'https://app.hcaguanare.com', description: 'Esta aplicación web progresiva permite al taller automotriz HCA la posibilidad de gestionar las ordenes de servicios, tener un control de estas y darle seguimiento. Además de esto, permite gestionar el inventario,  ventas de productos y nominas de los empleados. Ofrece un resumén estadístico de los distintos modulos que conforman la aplicación', skill: ['Quasar', 'Vuejs', 'Laravel', 'Mysql']},
             ],
         }
+    },
+    methods: {
+        spliceText (value) {
+            let text = value.length > 100 ? `${value.slice(0, 100)}...` : value
+            return text
+        },
     },
 }
 </script>
@@ -54,14 +72,46 @@ export default {
         flex-wrap: wrap;
         gap: 2.5rem;
         margin-top: 3rem;
-        padding: 2rem;
         border-radius: 20px;
         justify-content: center;
     }
     .col{
-        flex: 1 1 30rem;
+        flex: 1 1 30%;
+        max-width: 30%;
     }
-    .card{
+    .card {
+        background-color: var(--bg-dark-variant);
+        box-shadow: 2px 3px 12px -8px #122640;
+        border-radius: 10px;
+        border: 1px solid transparent;
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        &:hover{
+            .card__hover{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        img{
+             border-radius: 10px;
+        }
+    }
+    .card__hover{
+        padding: 1.5rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #2c2c6c, $alpha: 0.9);
+        border-radius: 10px;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        transition: all 500ms ease-out;
+    }
+    /*.card{
         background-color: var(--bg-dark-variant);
         box-shadow: 2px 3px 12px -8px #122640;
         border-radius: 10px;
@@ -72,7 +122,7 @@ export default {
             border: 1px solid var(--bg-dark-100);
         }
         
-    }
+    }*/
     // .tag{
     //     background-color: blue;
     //     padding: 0 0.75rem;
@@ -101,14 +151,17 @@ export default {
     }
 
      @media screen and (max-width: 1024px) {
-         .col{
-            gap: 1.2rem;
+        .col{
+            flex: 0 0 45%;
+            max-width: 45%;
+             gap: 1.2rem;
         }
      }
 
      @media screen and (max-width: 600px) {
          .col{
-            flex: 1 1 100%;
+            flex: 0 0 100%;
+             max-width: 100%;
             gap: 1rem;
         }
      }

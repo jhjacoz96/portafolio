@@ -50,4 +50,12 @@ export default {
         opacity: 1;
 
     }
+
+    @media screen and (max-width: 600px) {
+        .carrusel-indicators{
+            text-align: center;
+            width: 100%;
+            bottom: -4rem;
+        }
+    }
 </style>
