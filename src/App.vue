@@ -8,8 +8,14 @@
     <LayoutView />
     <LayoutFooter />
   </div>
-  <div class="cursor-1"/>
-  <div class="cursor-2"/>
+  <div
+    v-if="windowWidth > 600"
+    class="cursor-1"
+  />
+  <div
+    v-if="windowWidth > 600"
+    class="cursor-2"
+  />
 </template>
 
 <script>
@@ -28,6 +34,7 @@ export default {
   },
   data() {
     return {
+      windowWidth: window.innerWidth,
       activeDrawer: false,
     }
   },
