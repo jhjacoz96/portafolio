@@ -4,7 +4,7 @@
     class="layout"
   >
     <LayoutHeader v-model:activeDrawer="activeDrawer"/>
-    <LayoutView />
+    <router-view />
     <LayoutFooter />
   </div>
   <div
@@ -21,14 +21,12 @@
   import LayoutDrawer from './pages/layout/LayoutDrawer.vue'
   import LayoutHeader from './pages/layout/LayoutHeader.vue'
   import LayoutFooter from './pages/layout/LayoutFooter.vue'
-  import LayoutView from './pages/layout/LayoutView.vue'
 
 export default {
   name: 'App',
   components: {
     LayoutDrawer,
     LayoutHeader,
-    LayoutView,
     LayoutFooter,
   },
   data() {
@@ -133,10 +131,10 @@ export default {
     position: relative;
   }
   section{
-    padding: 2rem 0 14rem;
+    padding: 2rem 0 11rem;
     margin-top: 2rem;
     display: flex;
-    height: 100%;
+    min-height: calc(100vh - 10rem);
     justify-content: center;
   }
 

@@ -49,7 +49,7 @@ export default {
     },
     methods: {
         closeDrawer () {
-            this.activeDrawerComputed = !this.activeDrawerComputed
+            this.activeDrawerComputed = false
         }
     },
 }

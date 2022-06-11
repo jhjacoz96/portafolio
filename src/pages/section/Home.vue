@@ -30,7 +30,7 @@
                         <img alt="me" :src="require('@/assets/profile.png')">
                     </div>
                 </div> -->
-                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -41,6 +41,7 @@ export default {
     name:'SectionHome',
     data() {
         return {
+            
             typeValue: '',
             typeStatus: false,
             typeArray: ['Software Engineer','Full-Stack Developer', 'Javascript Developer'],
@@ -94,7 +95,9 @@ export default {
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
-        
+        height: 100%;
+        align-items: center;
+        align-content: center;
         .col__info{
             flex: 1 1 30rem;
             text-align: center;

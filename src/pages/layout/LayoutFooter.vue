@@ -12,7 +12,6 @@ export default {
 
 <style lang="scss" scoped>
     footer{
-        margin-top: 2rem;
         font-size: 1.7rem;
         padding: 2.5rem;
         position: absolute;
