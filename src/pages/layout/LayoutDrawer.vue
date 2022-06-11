@@ -1,29 +1,32 @@
 <template>
-    <div>
-        <header
-        :class="{active: activeDrawerComputed}"
+    <header
+    :class="{active: activeDrawerComputed}"
+    >
+        <a
+            href="#"
+            class="logo"
         >
-            <a
-                href="#"
-                class="logo"
-            >
-                Jhon
-                <span>Contreras</span>
-            </a>
-            <nav class="navbar">
-                <router-link to="/">Inicio</router-link> 
-                <router-link to="/about">Sobre mi</router-link> 
-                <router-link to="/skill">Tecnologías</router-link>
-                <router-link to="/experience">Experiencia</router-link>
-                <router-link to="/portafolio">Portafolio</router-link>
-                <router-link to="/contact">Contacto</router-link>
-            </nav>
-            <!-- <div class="follow">
-                <a href="a" class="fa-brands fa-github"></a>
-                <a href="a" class="fa-brands fa-linkedin"></a>
-            </div> -->
-        </header>
-    </div>
+            Jhon
+            <span>Contreras</span>
+        </a>
+        <nav class="navbar">
+            <router-link to="/" @click="closeDrawer()">Inicio</router-link> 
+            <router-link to="/about" @click="closeDrawer()">Sobre mi</router-link> 
+            <router-link to="/skill" @click="closeDrawer()">Tecnologías</router-link>
+            <router-link to="/experience" @click="closeDrawer()">Experiencia</router-link>
+            <router-link to="/portafolio" @click="closeDrawer()">Portafolio</router-link>
+            <router-link to="/contact" @click="closeDrawer()">Contacto</router-link>
+        </nav>
+        <!-- <div class="follow">
+            <a href="a" class="fa-brands fa-github"></a>
+            <a href="a" class="fa-brands fa-linkedin"></a>
+        </div> -->
+    </header>
+    <div
+        v-if="activeDrawerComputed"
+        class="backdrawer"
+        @click="closeDrawer()"
+    />
 </template>
 <script>
 export default {
@@ -44,9 +47,26 @@ export default {
             },
         },
     },
+    methods: {
+        closeDrawer () {
+            this.activeDrawerComputed = !this.activeDrawerComputed
+        }
+    },
 }
 </script>
 <style scoped>
+    .backdrawer{
+        min-height: 100vh !important;
+        height: 100% !important;
+        width: 100% !important;
+        background: var(--bg-dark-900) !important;
+        opacity: .5!important;
+        z-index: 500 !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        transition: all .5s ease !important;
+    }
     header {
         position: fixed;
         top: 0;
@@ -64,6 +84,7 @@ export default {
         padding: 8rem 2rem;
         width: 25rem;
         text-align: center;
+        transition: all .5s ease;
     }
 
     header .logo{
