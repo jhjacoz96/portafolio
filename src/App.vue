@@ -1,8 +1,12 @@
 <template>
   <LayoutDrawer v-model:activeDrawer="activeDrawer"/>
-  <LayoutHeader v-model:activeDrawer="activeDrawer"/>
-  <LayoutView />
-  <LayoutFooter />
+  <div
+    class="layout"
+  >
+    <LayoutHeader v-model:activeDrawer="activeDrawer"/>
+    <LayoutView />
+    <LayoutFooter />
+  </div>
   <div
     v-if="windowWidth > 600"
     class="cursor-1"
@@ -91,8 +95,8 @@ export default {
     outline: none;
     border: none;
     text-decoration: none;
-    // transition: all .2s linear;
-    // line-height: 1.5;
+    transition: all .2s linear;
+    line-height: 1.5;
   }
 
   html {
@@ -121,6 +125,12 @@ export default {
     background: var(--bg-dark-900);
     padding-left: 25rem;
     color: var(text-dark-900);
+  }
+  
+  .layout{
+    min-height: 100vh;
+    height: 100%;
+    position: relative;
   }
   section{
     padding: 2rem 0 14rem;
