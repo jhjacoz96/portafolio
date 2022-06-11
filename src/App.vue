@@ -1,4 +1,5 @@
 <template>
+  <LayoutPreloader />
   <LayoutDrawer v-model:activeDrawer="activeDrawer"/>
   <div
     class="layout"
@@ -21,13 +22,15 @@
   import LayoutDrawer from './pages/layout/LayoutDrawer.vue'
   import LayoutHeader from './pages/layout/LayoutHeader.vue'
   import LayoutFooter from './pages/layout/LayoutFooter.vue'
+  import LayoutPreloader from './pages/layout/LayoutPreloader.vue'
 
 export default {
   name: 'App',
   components: {
     LayoutDrawer,
-    LayoutHeader,
     LayoutFooter,
+    LayoutHeader,
+    LayoutPreloader,
   },
   data() {
     return {
