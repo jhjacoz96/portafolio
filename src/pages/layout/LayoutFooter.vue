@@ -1,6 +1,6 @@
 <template>
     <footer>
-        Create by <span>Jhon Contreras</span> | all rights reserved
+        Creado por <span>Jhon Contreras</span> | Todos los derechos reservados
     </footer>
 </template>
 

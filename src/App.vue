@@ -58,6 +58,17 @@ export default {
         cursor2.classList.remove('active')
       }
     })
+    let buttons = document.querySelector('button')
+    buttons.forEach(button => {
+      button.onmouseenter = () => {
+        cursor1.classList.add('active')
+        cursor2.classList.add('active')
+      }
+      button.onmouseleave = () => {
+        cursor1.classList.remove('active')
+        cursor2.classList.remove('active')
+      }
+    })
   },
 }
 </script>
@@ -96,8 +107,8 @@ export default {
     outline: none;
     border: none;
     text-decoration: none;
-    transition: all .2s linear;
-    line-height: 1.5;
+    // transition: all .2s linear;
+    // line-height: 1.5;
   }
 
   html {
@@ -240,6 +251,10 @@ export default {
   .btn__primary {
     background-color: var(--main-color);
     color: var(--bg-dark-900);
+  }
+
+  .btn__text{
+    border: none;
   }
 
   /*.btn {

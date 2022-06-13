@@ -74,8 +74,7 @@ export default {
           this.typeValue = this.typeArray[this.typeArrayIndex].substring(0, this.charIndex - 1);
           this.charIndex -= 1;
           setTimeout(this.eraseText, this.erasingSpeed);
-        }
-        else {
+        } else {
           this.typeStatus = false;
           this.typeArrayIndex += 1;
           if(this.typeArrayIndex >= this.typeArray.length)

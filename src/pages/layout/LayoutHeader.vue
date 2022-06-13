@@ -61,6 +61,7 @@ export default {
         border-radius: .5rem;
         font-size: 3rem;
         display: none;
+        cursor: pointer;
     }
 
     .header__heading{

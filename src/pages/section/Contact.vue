@@ -35,7 +35,10 @@
                 <div class="col__form">
                     <h3 class="title">Contactame</h3>
                     <p class="text-light">Si deseas contactarme puedes dejar un mensaje y te responderé lo antes posible.</p>
-                    <form action="">
+                    <form
+                        ref="form"
+                        @submit.prevent="sendEmail"
+                    >
                         <input
                             type="text"
                             name="name"
@@ -48,13 +51,12 @@
                             placeholder="Correo electrónico *"
                             required
                         >
-                        <input
-                            type="textarea"
+                        <textarea
                             name="message"
                             placeholder="Mensaje *"
                             row="7"
                             required
-                        >
+                        />
                         <button
                             type="submit"
                             class="btn btn__primary"
@@ -65,12 +67,21 @@
                 </div>
             </div>
         </div>
+        <CoreAlert
+            v-model="loading"
+            message="Mensaje enviado con exito"
+        />
     </section>
 </template>
 
 <script>
+//import emailjs from '@emailjs/browser'
+import CoreAlert from '../../components/CoreAlert'
 export default {
     name: 'SectionPortafolio',
+    components: {
+        CoreAlert,
+    },
     data() {
         return {
             itemsFront: [
@@ -88,14 +99,27 @@ export default {
                 {name: 'MySQL', level: 'Experimentado'},
                 {name: 'MongoDB', level: 'Intermedio'},
             ],
+            serviceID: 'default_service',
+            templateID: 'template_0zzpd4q',
+            key: 'B3Hr_BA8fhP_Fb3b3',
+            loading: false,
+        }
+    },
+    methods: {
+        sendEmail() {
+            /*emailjs.sendForm(this.serviceID, this.templateID, this.$refs.form, this.key)
+                .then((result) => {
+                    console.log('SUCCESS!', result.text);
+                }, (error) => {
+                    console.log('FAILED...', error.text);
+                });*/
+            this.loading= true
         }
     },
 }
 </script>
 
 <style lang="scss" scoped>
-    .experiene{
-    }
     .row{
         display: flex;
         flex-wrap: wrap;
