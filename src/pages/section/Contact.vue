@@ -109,10 +109,10 @@ export default {
         sendEmail() {
             /*emailjs.sendForm(this.serviceID, this.templateID, this.$refs.form, this.key)
                 .then((result) => {
-                    console.log('SUCCESS!', result.text);
+                    
                 }, (error) => {
-                    console.log('FAILED...', error.text);
-                });*/
+                    console.log('FAILED...', error.text)
+                })*/
             this.loading= true
         }
     },
