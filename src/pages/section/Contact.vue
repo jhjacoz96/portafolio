@@ -3,32 +3,14 @@
         <div class="container">
             <div class="row">
                 <div class="col__contact">
-                    <div class="card">
+                    <div
+                        v-for="(item, index) in itemsContact"
+                        :key="index"
+                        class="card"
+                    >
                         <div class="card__container">
-                            <span class="text fa-brands fa-whatsapp" />
-                            <p class="text">Whatsapp</p>
-                            <p class="text-light">(+58)414-9568372</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__container">
-                            <span class="text fa-solid fa-envelope" />
-                            <p class="text">Correo</p>
-                            <p class="text-light">jhjacoz96@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__container">
-                            <span class="text fa-brands fa-linkedin" />
-                            <p class="text">Linkedin</p>
-                            <p class="text-light">/jhoncontreras14</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__container">
-                            <span class="text fa-brands fa-github" />
-                            <p class="text">Github</p>
-                            <p class="text-light">/jhjacoz96</p>
+                            <span :class="`text icon ${item.icon}`" />
+                            <p class="text mb">{{ item.value }}</p>
                         </div>
                     </div>
                 </div>
@@ -43,19 +25,16 @@
                             type="text"
                             name="name"
                             placeholder="Nombre y apellido *"
-                            required
                         >
                         <input
                             type="email"
                             name="email"
                             placeholder="Correo electrónico *"
-                            required
                         >
                         <textarea
                             name="message"
                             placeholder="Mensaje *"
                             row="7"
-                            required
                         />
                         <button
                             type="submit"
@@ -67,37 +46,21 @@
                 </div>
             </div>
         </div>
-        <CoreAlert
-            v-model="loading"
-            message="Mensaje enviado con exito"
-        />
+        
     </section>
 </template>
 
 <script>
-//import emailjs from '@emailjs/browser'
-import CoreAlert from '../../components/CoreAlert'
+import emailjs from '@emailjs/browser'
 export default {
-    name: 'SectionPortafolio',
-    components: {
-        CoreAlert,
-    },
+    name: 'SectionContact',
     data() {
         return {
-            itemsFront: [
-                {name: 'Html', level: 'Experimentado'},
-                {name: 'Css', level: 'Experimentado'},
-                {name: 'Javascript', level: 'Experimentado'},
-                {name: 'Vuejs', level: 'Experimentado'},
-                {name: 'Angular', level: 'Intermedio'},
-                {name: 'TypeScript', level: 'Intermedio'},
-            ],
-            itemsBackend: [
-                {name: 'Nodejs', level: 'Intermedio'},
-                {name: 'Express', level: 'Intermedio'},
-                {name: 'Laravel', level: 'Experimentado'},
-                {name: 'MySQL', level: 'Experimentado'},
-                {name: 'MongoDB', level: 'Intermedio'},
+            itemsContact: [
+                {icon: 'fa-brands fa-whatsapp', name: 'Whatsapp', value: '(+58) 414-9568372', link: ''},
+                {icon: 'fa-solid fa-envelope', name: 'Correo', value: 'jhjacoz96@gmail.com', link: ''},
+                {icon: 'fa-brands fa-linkedin', name: 'Linkedin', value: '/jhoncontreras14', link: ''},
+                {icon: 'fa-brands fa-github', name: 'Github', value: '/jhjacoz96', link: ''},
             ],
             serviceID: 'default_service',
             templateID: 'template_0zzpd4q',
@@ -107,13 +70,20 @@ export default {
     },
     methods: {
         sendEmail() {
-            /*emailjs.sendForm(this.serviceID, this.templateID, this.$refs.form, this.key)
-                .then((result) => {
-                    
-                }, (error) => {
-                    console.log('FAILED...', error.text)
-                })*/
-            this.loading= true
+            this.loading = true
+            emailjs.sendForm(this.serviceID, this.templateID, this.$refs.form, this.key)
+                .then(() => {
+                    this.emitter.emit('openAlert', {
+                        message: 'Mensaje enviado con exito',
+                    })
+                }, () => {
+                    this.emitter.emit('openAlert', {
+                        message: 'Ha ocurrido un error',
+                    })
+                })
+                .finally(() => {
+                    this.loading = false
+                })
         }
     },
 }
@@ -164,6 +134,9 @@ export default {
     .card__container{
         text-align: center;
         padding: 1.9rem 2rem;
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
     }
     .card__container-image{
         border-radius: 10px;
@@ -191,6 +164,13 @@ export default {
         border: 2px solid var(--bg-dark-variant);
         resize: none;
         color: var(--text-dark-100);
+    }
+
+    .mb{
+        margin-bottom: .5rem;
+    }
+    .icon{
+        font-size: 2rem;
     }
 
      @media screen and (max-width: 1024px) {

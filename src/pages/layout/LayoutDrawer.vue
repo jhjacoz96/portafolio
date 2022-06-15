@@ -1,6 +1,6 @@
 <template>
     <header
-    :class="{active: activeDrawerComputed}"
+    :class="{active: modelValue}"
     >
         <a
             href="#"
@@ -12,8 +12,8 @@
         <nav class="navbar">
             <router-link to="/" @click="closeDrawer()">Inicio</router-link> 
             <router-link to="/about" @click="closeDrawer()">Sobre mi</router-link> 
-            <router-link to="/skill" @click="closeDrawer()">Tecnologías</router-link>
-            <router-link to="/experience" @click="closeDrawer()">Experiencia</router-link>
+            <!-- <router-link to="/skill" @click="closeDrawer()">Tecnologías</router-link> -->
+            <router-link to="/experience" @click="closeDrawer()">Resumen</router-link>
             <router-link to="/portafolio" @click="closeDrawer()">Portafolio</router-link>
             <router-link to="/contact" @click="closeDrawer()">Contacto</router-link>
         </nav>
@@ -23,7 +23,7 @@
         </div> -->
     </header>
     <div
-        v-if="activeDrawerComputed"
+        v-if="modelValue"
         class="backdrawer"
         @click="closeDrawer()"
     />
@@ -31,25 +31,18 @@
 <script>
 export default {
     name: 'CoreDrawer',
+    emit:['update:modelValue'],
     props: {
-        activeDrawer: {
+        modelValue: {
             type: Boolean,
             default: false,
         },
     },
     computed: {
-        activeDrawerComputed: {
-            get () {
-                return this.activeDrawer
-            },
-            set (value) {
-                this.$emit('update:activeDrawer', value)
-            },
-        },
     },
     methods: {
         closeDrawer () {
-            this.activeDrawerComputed = false
+            this.$emit('update:modelValue', false)
         }
     },
 }

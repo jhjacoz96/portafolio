@@ -1,10 +1,10 @@
 <template>
   <LayoutPreloader />
-  <LayoutDrawer v-model:activeDrawer="activeDrawer"/>
+  <LayoutDrawer v-model="activeDrawer"/>
   <div
     class="layout"
   >
-    <LayoutHeader v-model:activeDrawer="activeDrawer"/>
+    <LayoutHeader v-model="activeDrawer"/>
     <router-view />
     <LayoutFooter />
   </div>
@@ -16,6 +16,7 @@
     v-if="windowWidth > 600"
     class="cursor-2"
   />
+  <CoreAlert />
 </template>
 
 <script>
@@ -23,6 +24,7 @@
   import LayoutHeader from './pages/layout/LayoutHeader.vue'
   import LayoutFooter from './pages/layout/LayoutFooter.vue'
   import LayoutPreloader from './pages/layout/LayoutPreloader.vue'
+  import CoreAlert from './components/CoreAlert.vue'
 
 export default {
   name: 'App',
@@ -31,6 +33,7 @@ export default {
     LayoutFooter,
     LayoutHeader,
     LayoutPreloader,
+    CoreAlert,
   },
   data() {
     return {
@@ -54,17 +57,6 @@ export default {
         cursor2.classList.add('active')
       }
       link.onmouseleave = () => {
-        cursor1.classList.remove('active')
-        cursor2.classList.remove('active')
-      }
-    })
-    let buttons = document.querySelector('button')
-    buttons.forEach(button => {
-      button.onmouseenter = () => {
-        cursor1.classList.add('active')
-        cursor2.classList.add('active')
-      }
-      button.onmouseleave = () => {
         cursor1.classList.remove('active')
         cursor2.classList.remove('active')
       }

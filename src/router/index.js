@@ -11,14 +11,14 @@ const routes = [
     name: 'Conoceme',
     component: () => import('../pages/section/About.vue'),
   },
-  {
-    path: '/skill',
-    name: 'Tecnolígas',
-    component: () => import('../pages/section/Skill.vue'),
-  },
+  // {
+  //   path: '/skill',
+  //   name: 'Tecnolígas',
+  //   component: () => import('../pages/section/Skill.vue'),
+  // },
   {
     path: '/experience',
-    name: 'Experiencia',
+    name: 'Resumen',
     component: () => import('../pages/section/Experience.vue'),
   },
   {

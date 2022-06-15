@@ -1,7 +1,7 @@
 <template>
     <Transition name="slide-fade">
     <div
-        v-if="modelValue"
+        v-if="open"
         class="alert"
     >
         <div class="alert__content">
@@ -18,36 +18,34 @@
 <script>
 export default {
     name:   'CoreAlert',
-    emit:['update:modelValue'],
-    props: {
-        message: {
-            type: String,
-            default: 'Mensaje enviado con exito',
-        },
-        modelValue: {
-            type: Boolean,
-            default: false,
-        },
-    },
     data() {
         return {
             alertIterval: null,
+            message: '',
+            open: false,
         }
     },
+    computed: {
+    },
     watch: {
-        modelValue (value) {
-            if (value) {
-                this.alertIterval = setTimeout(() => {
-                    this.$emit('update:modelValue', false)
-                }, 5000)
-            }
-        },
     },
     methods: {
         close () {
-            this.$emit('update:modelValue', false)
+            this.open = false
             clearTimeout(this.alertIterval)
         },
+        openAlert (value) {
+            this.close()
+            this.message = value.message
+            this.open = true
+            this.alertIterval = setTimeout(() => {
+                this.close()
+            }, 3000)
+        },
+        
+    },
+    mounted () {
+        this.emitter.on('openAlert', this.openAlert)
     },
 }
 </script>
@@ -59,6 +57,7 @@ export default {
         background: var(--bg-dark-100);
         width: 40rem;
         height: 5rem;
+        left: calc(50vw - 20rem);
         z-index: 3000;
         border-radius: 3px;
         padding: 1rem 1.5rem;
@@ -80,8 +79,8 @@ export default {
 
     .slide-fade-enter-from,
     .slide-fade-leave-to {
-        transform: translateY(20px);
-        opacity: 0;
+    transform: translateY(20px);
+    opacity: 0;
     }
 
 </style>

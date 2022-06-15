@@ -14,7 +14,7 @@
             >
                 <i
                     class="fa-solid"
-                    :class="{ 'fa-times': this.activeDrawer, 'fa-bars': !this.activeDrawer }"
+                    :class="{ 'fa-times': this.modelValue, 'fa-bars': !this.modelValue }"
                 />
             </button>
         </div>
@@ -23,25 +23,16 @@
 <script>
 export default {
     name: 'CoreHeader',
+    emit:['update:modelValue'],
     props: {
-        activeDrawer: {
+        modelValue: {
             type: Boolean,
             default: false,
         },
     },
-    computed: {
-        activeDrawerComputed: {
-            get () {
-                return this.activeDrawer
-            },
-            set (value) {
-                this.$emit('update:activeDrawer', value)
-            },
-        },
-    },
     methods: {
         active () {
-            this.activeDrawerComputed = !this.activeDrawerComputed
+            this.$emit('update:modelValue', !this.modelValue)
         },
     },
 }
