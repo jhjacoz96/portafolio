@@ -16,9 +16,11 @@
                         <p>{{ info }}</p>
                     </div>
                     <div class="actions">
-                        <button
+                        <a
                             class="btn"
-                        >Desargar cv</button>
+                            href="/files/CV_JHON_CONTRERAS.pdf"
+                            download
+                        >Desargar cv</a>
                         <button
                             class="btn btn__primary"
                             @click="$router.push('/about')"
@@ -44,13 +46,13 @@ export default {
             
             typeValue: '',
             typeStatus: false,
-            typeArray: ['Software Engineer','Full-Stack Developer', 'Javascript Developer'],
+            typeArray: ['Software Engineer','Full-Stack Developer', 'Web Developer'],
             typingSpeed: 200,
             erasingSpeed: 100,
             newTextDelay: 1000,
             typeArrayIndex: 0,
             charIndex: 0,
-            info: 'Soy un ingeniero en informática dedicado al desarrollo de software, con experiencia en el desarrollo full-stack con distintas tecnologías ',
+            info: 'Diseñar y crear softaware es mi pasión',
         }
     },
     methods: {

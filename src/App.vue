@@ -227,6 +227,7 @@ export default {
     display: block;
     padding: 0.75rem 1.2rem;
     border-radius: 0.4rem;
+    font-size: 1.7rem;
     cursor: pointer;
     border: 1px solid var(--main-color);
     color: var(--main-color);

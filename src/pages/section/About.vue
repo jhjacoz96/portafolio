@@ -15,13 +15,13 @@
                             <span class="icon fa-solid fa-graduation-cap" /> <span class="text-light"> Ingenería en informática</span>
                         </div>
                         <div class="box">
-                            <span class="icon fa-solid fa-briefcase" /> <span class="text-light">Software developer</span>
+                            <span class="icon fa-solid fa-xbriefcase" /> <span class="text-light">Software developer</span>
                         </div>
                         <div class="box">
                             <span class="icon fa-solid fa-location-dot" /> <span class="text-light"> Barquisimeto, Venezuela</span>
                         </div>
                     </div>
-                    <p class="text-light">Hola soy Jhon, ingeniero en informática con 2 años y medio de experiencia como desarrollador full-stack, dispuesto a los retos y a soluciones informáticas y optimización de algoritmos, aplicando principios de programación. Me caracterizo por ser una persona autodidacta, interesado en aprender nuevas tecnologías para el desarrollo de software, dispuesto a afrontar cualquier tipo de retos que me ayuden a crecer como profesional.</p>
+                    <p class="text-light">Hola soy Jhon, ingeniero en informática con 2 años de experiencia como desarrollador web full-stack, donde he diseñado y desarrollado aplicaciones robustas y escalables siguiendo siempre todas las etadas del ciclo de vida de software. Me caracterizo por ser autodidacta, interesado en aprender nuevas tecnologías y dispuesto a afrontar cualquier tipo de retos que me ayuden a crecer como profesional.</p>
                     <div class="content-action">
                         <span class="icon fa-brands fas-graduation-cap"></span>
                         <button

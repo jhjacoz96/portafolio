@@ -1,6 +1,6 @@
 <template>
     <footer>
-        Creado por <span>Jhon Contreras</span> | Todos los derechos reservados
+        <span>Jhon Contreras</span> | &copy; Copyright 2022
     </footer>
 </template>
 

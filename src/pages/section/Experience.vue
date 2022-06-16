@@ -8,8 +8,8 @@
                         <div class="card__container">
                             <article class="item__container">
                                 <span class="item__icon fa-solid fa-graduation-cap" />
-                                <small class="text-light-small">Septiembre de 2014 - Noviembre 2021</small>
-                                <h6 class="card__title">Universidad Centroccidental Lisandro Alvarado</h6>
+                                <p class="text-light-small">Sept 2014 - Nov 2021</p>
+                                <h6 class="card__title ">Universidad Centroccidental Lisandro Alvarado</h6>
                                 <p class="text-light">Ingeneria en informática</p>
                             </article>
                         </div>
@@ -21,19 +21,19 @@
                         <div class="card__container">
                             <article class="item__container">
                                 <span class="item__icon fa-solid fa-briefcase" />
-                                <small class="text-light-small">Mar 2021 - Ago 2021</small>
+                                <p class="text-light-small">Mar 2021 - Ago 2021</p>
                                 <h6 class="card__title">Full-stack developer</h6>
                                 <p class="text-light">Puce</p>
                             </article>
                             <article class="item__container">
                                 <span class="item__icon fa-solid fa-briefcase" />
-                                <small class="text-light-small">Oct 2021 - Ene 2022</small>
+                                <p class="text-light-small">Oct 2021 - Ene 2022</p>
                                 <h6 class="card__title">Full-stack developer</h6>
                                 <p class="text-light">Phl System</p>
                             </article>
                             <article class="item__container">
                                 <span class="item__icon fa-solid fa-briefcase" />
-                                <small class="text-light-small">Sep 2021 - Mar 2022</small>
+                                <p class="text-light-small">Sep 2021 - Mar 2022</p>
                                 <h6 class="card__title">Full-stack developer</h6>
                                 <p class="text-light">Hospital Clinico Automotriz</p>
                             </article>
@@ -105,7 +105,7 @@ export default {
         color: var(--text-dark-900);
         opacity: 75%;
         font-size: 1.8rem;
-        margin: 0.6rem 0;
+        margin: .6rem 0 .6rem;
     }
     .card__container{
         padding: 1.9rem 2rem;
@@ -136,10 +136,17 @@ export default {
         color: var(--main-color);
     }
 
+    .mb{
+        margin-bottom: 0rem;
+    }
+
       @media screen and (max-width: 600px) {
-          .card{
-              padding: 2rem 3rem; 
-          }
+        .card{
+            padding: 2rem 3rem; 
+        }
+        .card__title{
+            margin: 1rem 0 1rem;
+        }
       }
 
 </style>
