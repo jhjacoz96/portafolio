@@ -69,6 +69,7 @@ export default {
             height: 4px;
             top:100%;
             left: 0;
+            margin-top: .5rem
         }
         &:after{
             content: '';
@@ -78,7 +79,7 @@ export default {
             height: 4px;
             top:100%;
             left: 0;
-            margin-top: 8px;
+            margin-top: 1.5rem;
         }
     }
 
@@ -89,11 +90,9 @@ export default {
     }
 
     @media screen and (max-width: 1024px) {
-        
-      #menu-bars {
-        display: initial;
-      }
-
+        #menu-bars {
+            display: initial;
+        }
     }
 
 </style>

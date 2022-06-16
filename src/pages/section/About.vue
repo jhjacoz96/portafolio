@@ -164,7 +164,6 @@ export default {
         display: flex;
         flex-wrap: wrap;
         gap: 2.5rem;
-        padding: 2rem;
         border-radius: 20px;
         justify-content: center;
     }

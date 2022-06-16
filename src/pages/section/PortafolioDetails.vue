@@ -21,6 +21,8 @@
                         >{{ item }}</span>
                     </div>
                     <p class="text-light">{{ detail.description }}</p>
+                    <!-- <h3 class="title" style="margin:3rem 0 2rem;padding:0;">Mis contribuiones</h3>
+                    <p class="text-light">{{ detail.contributions }}</p> -->
                 </div>
                 <div class="col__carrusel">
                     <div>
