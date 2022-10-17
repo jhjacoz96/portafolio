@@ -15,7 +15,7 @@
                             <span class="icon fa-solid fa-graduation-cap" /> <span class="text-light"> Ingenería en informática</span>
                         </div>
                         <div class="box">
-                            <span class="icon fa-solid fa-xbriefcase" /> <span class="text-light">Software developer</span>
+                            <span class="icon fa-solid fa-briefcase" /> <span class="text-light">Software developer</span>
                         </div>
                         <div class="box">
                             <span class="icon fa-solid fa-location-dot" /> <span class="text-light"> Barquisimeto, Venezuela</span>
@@ -24,12 +24,14 @@
                     <p class="text-light">Hola soy Jhon, ingeniero en informática con 2 años de experiencia como desarrollador web full-stack, donde he diseñado y desarrollado aplicaciones robustas y escalables siguiendo siempre todas las etadas del ciclo de vida de software. Me caracterizo por ser autodidacta, interesado en aprender nuevas tecnologías y dispuesto a afrontar cualquier tipo de retos que me ayuden a crecer como profesional.</p>
                     <div class="content-action">
                         <span class="icon fa-brands fas-graduation-cap"></span>
-                        <button
+                        <a
                             class="btn btn__primary"
                             type="button"
+                            href="/files/CV_JHON_CONTRERAS.pdf"
+                            download
                         >
                             <span class="icon fa-solid fa-download"></span> Descargar CV
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

@@ -39,6 +39,7 @@
                         <button
                             type="submit"
                             class="btn btn__primary"
+                            :disabled="loading"
                         >
                             Enviar mensaje
                         </button>
