@@ -9,7 +9,9 @@
                 >
                     <router-link :to="`/portafolio/${item.id}`">
                         <div class="card">
-                            <img :src="item.img[0]" :alt="item.title">
+                            <div class="card__img">
+                                <img :src="item.img[0]" :alt="item.title">
+                            </div>
                             <h6 class="card__title">{{ item.type }}</h6>
                             <div class="card__hover">
                                 <h4 class="title">{{ item.title }}</h4>
@@ -48,11 +50,12 @@ export default {
         gap: 2.5rem;
         margin-top: 3rem;
         border-radius: 20px;
-        justify-content: center;
+        justify-content: start;
     }
     .col{
         flex: 1 1 30%;
         max-width: 30%;
+        height: 22rem;
     }
     .card {
         background-color: var(--bg-dark-variant);
@@ -69,8 +72,16 @@ export default {
                 visibility: visible;
             }
         }
-        img{
-             border-radius: 10px;
+        .card__img{
+            height: 12rem;
+            border-radius: 10px;
+            img{
+                border-radius: 10px;
+                overflow: hidden;
+                object-fit: cover;
+                height:100%;
+                width:100%;
+            }
         }
     }
     .card__hover{
@@ -86,26 +97,6 @@ export default {
         visibility: hidden;
         transition: all 500ms ease-out;
     }
-    /*.card{
-        background-color: var(--bg-dark-variant);
-        box-shadow: 2px 3px 12px -8px #122640;
-        border-radius: 10px;
-        border: 1px solid transparent;
-        position: relative;
-        &:hover{
-            background-color: transparent;
-            border: 1px solid var(--bg-dark-100);
-        }
-        
-    }*/
-    // .tag{
-    //     background-color: blue;
-    //     padding: 0 0.75rem;
-    //     border-radius: 9999px;
-    //     color: #5443c3;
-    //     background-color: #ddd9f7;
-    //     box-shadow: 2px 2px 4px rgb(47 46 139 / 43%);
-    // }
     .card__container{
         padding: 1.9rem 2rem;
     }

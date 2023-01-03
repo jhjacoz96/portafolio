@@ -114,7 +114,7 @@ export default {
     .carrusel-inner{
         position: relative;
         width: 100%;
-        height: 35rem;
+        height: 40rem;
         overflow: hidden;
         background-color: #000;
     }

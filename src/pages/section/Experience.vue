@@ -21,9 +21,15 @@
                         <div class="card__container">
                             <article class="item__container">
                                 <span class="item__icon fa-solid fa-briefcase" />
-                                <p class="text-light-small">Mar 2021 - Ago 2021</p>
+                                <p class="text-light-small">May 2022 - Actualidad</p>
                                 <h6 class="card__title">Full-stack developer</h6>
-                                <p class="text-light">Puce</p>
+                                <p class="text-light">HiCitty</p>
+                            </article>
+                            <article class="item__container">
+                                <span class="item__icon fa-solid fa-briefcase" />
+                                <p class="text-light-small">Sep 2021 - Mar 2022</p>
+                                <h6 class="card__title">Full-stack developer</h6>
+                                <p class="text-light">Freelancer</p>
                             </article>
                             <article class="item__container">
                                 <span class="item__icon fa-solid fa-briefcase" />
@@ -32,10 +38,10 @@
                                 <p class="text-light">Phl System</p>
                             </article>
                             <article class="item__container">
-                                <span class="item__icon fa-solid fa-briefcase" />
-                                <p class="text-light-small">Sep 2021 - Mar 2022</p>
+                                <span class="item__icon fa-solid fa-briefcase" />users
+                                <p class="text-light-small">Mar 2021 - Ago 2021</p>
                                 <h6 class="card__title">Full-stack developer</h6>
-                                <p class="text-light">Hospital Clinico Automotriz</p>
+                                <p class="text-light">Puce</p>
                             </article>
                         </div>
                     </div>

@@ -47,7 +47,7 @@ export default {
             typeValue: '',
             typeStatus: false,
             typeArray: ['Software Engineer','Full-Stack Developer', 'Web Developer'],
-            typingSpeed: 200,
+            typingSpeed: 100,
             erasingSpeed: 100,
             newTextDelay: 1000,
             typeArrayIndex: 0,
