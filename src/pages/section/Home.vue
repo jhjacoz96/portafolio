@@ -18,7 +18,7 @@
                     <div class="actions">
                         <a
                             class="btn"
-                            href="/files/CV_JHON_CONTRERAS.pdf"
+                            href="https://drive.google.com/uc?id=1neQZBhBKM3owoDz_sCub04_6yt4coQTb&export=download"
                             download
                         >Desargar cv</a>
                         <button

@@ -27,7 +27,7 @@
                         <a
                             class="btn btn__primary"
                             type="button"
-                            href="/files/CV_JHON_CONTRERAS.pdf"
+                            href="https://drive.google.com/uc?id=1neQZBhBKM3owoDz_sCub04_6yt4coQTb&export=download"
                             download
                         >
                             <span class="icon fa-solid fa-download"></span> Descargar CV

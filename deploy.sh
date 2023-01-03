@@ -11,4 +11,4 @@ git add -A
 git commit -m "New desploy"
 git push -f git@github.com:jhjacoz96/portafolio.git master:gh-pages
 
-cd .
+cd -
