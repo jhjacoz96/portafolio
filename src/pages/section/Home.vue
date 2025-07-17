@@ -18,7 +18,7 @@
                     <div class="actions">
                         <a
                             class="btn"
-                            href="https://drive.google.com/uc?id=1neQZBhBKM3owoDz_sCub04_6yt4coQTb&export=download"
+                            href="https://drive.google.com/file/d/1sxDABdm7Lc3qc9RY9LN_s49D7fak8l7V/view?usp=drive_link"
                             download
                         >Desargar cv</a>
                         <button
