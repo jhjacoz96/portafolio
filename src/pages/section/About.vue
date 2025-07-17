@@ -27,7 +27,7 @@
                         <a
                             class="btn btn__primary"
                             type="button"
-                            href="https://drive.google.com/uc?id=1neQZBhBKM3owoDz_sCub04_6yt4coQTb&export=download"
+                            href="https://drive.google.com/uc?id=1cLJvghh9aOi0a5P9ykIQi7-TQtxeN-aH&export=download"
                             download
                         >
                             <span class="icon fa-solid fa-download"></span> Descargar CV
