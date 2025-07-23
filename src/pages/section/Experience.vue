@@ -29,7 +29,10 @@
                             </div>
                             <div class="timeline-line flex-1"></div>
                         </div>
-                        <div class="card-resume__content bg-[var()]">
+                        <div
+                            class="card-resume__content bg-[var(--color-blue-dark)] rounded-[10px] p-4 shadow-xl"
+                            ref="cardResumeRef"
+                        >
                             <div class="mb-[16px]">
                                 <span class="tag">
                                     {{ item.time }}
@@ -97,20 +100,47 @@ export default {
                         },
                     ],
                 },
-            ]
+            ],
+            cards: [1, 2, 3, 4],
         }
+    },
+    mounted() {
+        this.$nextTick(() => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                    const el = entry.target;
+                    if (entry.isIntersecting) {
+                        el.classList.remove('animate-out-view');
+                        el.classList.add('animate-in-view');
+                    } else {
+                        el.classList.remove('animate-in-view');
+                        el.classList.add('animate-out-view');
+                    }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                }
+            );
+            this.$refs.cardResumeRef.forEach((el) => observer.observe(el));
+        });
     }
 }
 </script>
 
 <style lang="scss" scoped>
+.card-resume__content  {
+    opacity: 0;
+    transform: translateX(100px);
+}
 .timeline-line {
     border-right: 1px solid var(--color-blue-medium);
     width: 50%;
 }
 .tag {
     display: inline-block;
-    padding: 0.4rem;
+    padding: 0.2rem 0.8rem;
     background: var(--color-blue-medium);
     color: var(--secondary-color);
     border-radius: 20px;
