@@ -1,15 +1,16 @@
 <template>
     <section class="about">
-        <div class="container">
-            <div class="row-1">
+        <div class="wrapper">
+            <div class="content-about expand-from-bottom">
                 <div class="content-img">
-                    <div class="img">
-                        <img class="img-circular" src="https://res.cloudinary.com/ddxgl2pr9/image/upload/c_scale,h_400,w_300/v1654640717/Portafolio/IMG_20220607_181534_1_yvk1t1.jpg">
-                        <div class="capa"></div>
-                    </div>
+                    <!-- <div class="img"> -->
+                        <!-- <img class="img-circular" src="https://res.cloudinary.com/ddxgl2pr9/image/upload/c_scale,h_400,w_300/v1654640717/Portafolio/IMG_20220607_181534_1_yvk1t1.jpg">
+                        <div class="capa"></div> -->
+                    <!-- </div> -->
+                    <WordCloud3d />
                 </div>
                 <div class="content">
-                    <h3 class="title">Jhon Contreras</h3>
+                    <h3 class="title mb-[20px]">Jhon Contreras</h3>
                     <div class="box-container">
                         <div class="box">
                             <span class="icon fa-solid fa-graduation-cap" /> <span class="text-light"> Ingenería en informática</span>
@@ -21,10 +22,14 @@
                             <span class="icon fa-solid fa-location-dot" /> <span class="text-light"> Barquisimeto, Venezuela</span>
                         </div>
                     </div>
-                    <p class="text-light">Hola soy Jhon, ingeniero en informática con 2 años de experiencia como desarrollador web full-stack, donde he diseñado y desarrollado aplicaciones robustas y escalables, siguiendo siempre todas las etapas del ciclo de vida de software. Me caracterizo por ser autodidacta, interesado en aprender nuevas tecnologías y dispuesto a afrontar cualquier tipo de retos que me ayuden a crecer como profesional.</p>
+                    <p class="text-light">👋 ¡Hola! Soy Jhon Contreras 👨🏻‍💻, Ingeniero en Informática y desarrollador full-stack con más de 4 años de experiencia creando soluciones web robustas y escalables para startups y empresas.</p><br>
+                    <!-- He trabajado en sectores como hotelería, salud y e-commerce, desarrollando plataformas desde cero y optimizando su rendimiento -->
+                    <p class="text-light">🚀 Uno de mis mayores logros fue mi participación en TheHoster, donde implementé el 40% del sistema, reduje los tiempos de carga en un 30% y automatizé procesos clave que mejoraron la operación.</p><br>
+                    <p class="text-light">💡 Como ingeniero y autodidacta, disfruto aplicar buenas prácticas, aprender nuevas tecnologías y asumir desafíos que me ayuden a crecer profesionalmente.</p><br>
+                    <p class="text-light">¿Construimos algo juntos? 💻✨</p>
                     <div class="content-action">
                         <span class="icon fa-brands fas-graduation-cap"></span>
-                        <a
+                        <a 
                             class="btn btn__primary"
                             type="button"
                             href="https://drive.google.com/uc?id=1cLJvghh9aOi0a5P9ykIQi7-TQtxeN-aH&export=download"
@@ -35,46 +40,57 @@
                     </div>
                 </div>
             </div>
-            <h3 class="title">Habilidades</h3>
-            <div class="row">
-                <div class="col__experience">
-                    <div class="card__experience">
-                        <div class="card__header">
-                            <h6 class="card__title">Front-end developer</h6>
+            <div class="">
+                <h3 class="title mt-[70px] mb-[20px] slide-in-left">Habilidades</h3>
+                <p class="text-light mb-[20px] expand-from-bottom">💡 A lo largo de mi carrera he desarrollado habilidades sólidas en desarrollo web full-stack, destacando en la creación de interfaces modernas con Vuejs y Tailwind, así como en la construcción de APIs robustas usando Laravel Nodejs (expressjs).</p>
+            </div>
+            <div class="content-experience">
+                <div
+                    v-for="stack in technologyStack"
+                    :key="stack.label"
+                    class="content-item-experience"
+                    ref="cardExperienceRefs"
+                >
+                    <div class="card-experience relative group hover">
+                        <!-- transition-opacity duration-400 group-hover:opacity-10 -->
+                        <div class="card-experience__content">
+                            <div class="card-experience__header">
+                                <h6 class="card-experience__title">{{ stack.label }}</h6>
+                            </div>
+                            <div class="flex gap-[16px] flex-wrap justify-center">
+                                <article
+                                    v-for="technology in stack.technologies"
+                                    :key="technology.label"
+                                    class="flex justify-center w-[75px] h-[62px]"
+                                >
+                                    <div class="flex flex-col justify-between items-center">
+                                        <div class="flex items-center flex-1">
+                                            <template v-if="technology.origin === 'local'">
+                                                <img
+                                                    :src="`/assets/icons/svg/${technology.icon}.svg`"
+                                                    :alt="technology.icon"
+                                                    class="w-[30px]"
+                                                />
+                                            </template>
+                                            <template v-else>
+                                                <span
+                                                    :class="[technology.icon]"
+                                                    class="text-[42px] text-[#27374D]"
+                                                />
+                                            </template>
+                                        </div>
+                                        <p class="text-[#27374D]">{{ technology.label }}</p>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
-                        <div class="card__experience__container">
-                            <article
-                                v-for="(item, i) in itemsFront"
-                                :key="i"
-                                class="items__container"
-                            >
-                                <span class="items__container__icon fa-solid fa-medal" />
-                                <div class="items__container__item">
-                                    <h4 class="text-light">{{ item.name }}</h4>
-                                    <small class="text-light-small">{{ item.level }}</small>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-                <div class="col__experience">
-                    <div class="card__experience">
-                        <div class="card__header">
-                            <h6 class="card__title">Back-end developer</h6>
-                        </div>
-                        <div class="card__experience__container">
-                            <article
-                                v-for="(item, i) in itemsBackend"
-                                :key="i"
-                                class="items__container"
-                            >
-                                <span class="items__container__icon fa-solid fa-medal" />
-                                <div class="items__container__item">
-                                    <h4 class="text-light">{{ item.name }}</h4>
-                                    <small class="text-light-small">{{ item.level }}</small>
-                                </div>
-                            </article>
-                        </div>
+                        <!-- absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 -->
+                        <!-- <div class="card-experience__content z-[1000] absolute top-[0] opacity-0 group-hover:opacity-100 transition-opacity duration-400"> -->
+                            <!-- <div class="card-experience__header">
+                                <h6 class="card-experience__title">{{ stack.label }}</h6>
+                            </div> -->
+                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos sint mollitia ut doloribus neque, fugiat necessitatibus hic aliquid officia nulla.</p>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -83,62 +99,219 @@
 </template>
 
 <script>
+import WordCloud3d from '@/components/WordCloud3d'
 export default {
+    components: {
+        WordCloud3d
+    },
     name: 'SectionAbout',
     data() {
         return {
-            itemsFront: [
-                {name: 'Html', level: 'Experimentado'},
-                {name: 'Css', level: 'Experimentado'},
-                {name: 'Javascript', level: 'Experimentado'},
-                {name: 'Vuejs', level: 'Experimentado'},
-                {name: 'Angular', level: 'Intermedio'},
-                {name: 'TypeScript', level: 'Intermedio'},
-            ],
-            itemsBackend: [
-                {name: 'Nodejs', level: 'Intermedio'},
-                {name: 'Express', level: 'Intermedio'},
-                {name: 'Laravel', level: 'Experimentado'},
-                {name: 'MySQL', level: 'Experimentado'},
-                {name: 'MongoDB', level: 'Intermedio'},
-            ],
+            cards: [1, 2, 3, 4],
+            technologyStack: [
+                {
+                    label: 'FrontEnd',
+                    technologies: [
+                        {
+                            label: "Html",
+                            icon: 'icon fa-brands fa-html5',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Css",
+                            icon: 'icon fa-brands fa-css3',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Tailwind",
+                            icon: 'tailwindcss',
+                            origin: 'local'
+                        },
+                        {
+                            label: "Javascript",
+                            icon: 'icon fa-brands fa-js',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Typescript",
+                            icon: 'typescript',
+                            origin: 'local'
+                        },
+                        {
+                            label: "Vuejs",
+                            icon: 'icon fa-brands fa-vuejs',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Angular",
+                            icon: 'icon fa-brands fa-angular',
+                            origin: 'fontawesome'
+                        },
+                    ]
+                },
+                {
+                    label: 'BackEnd',
+                    technologies: [
+                        {
+                            label: "Php",
+                            icon: 'icon fa-brands fa-php',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Laravel",
+                            icon: 'icon fa-brands fa-laravel',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Nodejs",
+                            icon: 'icon fa-brands fa-node-js',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Expressjs",
+                            icon: 'express',
+                            origin: 'local'
+                        },
+                        {
+                            label: "Typescript",
+                            icon: 'typescript',
+                            origin: 'local'
+                        },
+                        {
+                            label: "MySQL",
+                            icon: 'express',
+                            origin: 'local'
+                        },
+                        {
+                            label: "PostgreSQL",
+                            icon: 'postgresql',
+                            origin: 'local'
+                        },
+                        {
+                            label: "MongoDB",
+                            icon: 'mongodb',
+                            origin: 'local'
+                        },
+                    ]
+                },
+                {
+                    label: 'Explorando nuevas tecnologías',
+                    technologies: [
+                        {
+                            label: "React",
+                            icon: 'icon fa-brands fa-react',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Nestjs",
+                            icon: 'nestjs',
+                            origin: 'local'
+                        },
+                        {
+                            label: "Docker",
+                            icon: 'icon fa-brands fa-docker',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Aws",
+                            icon: 'icon fa-brands fa-aws',
+                            origin: 'fontawesome'
+                        },
+                    ]
+                },
+                {
+                    label: 'Entorno de desarrollo',
+                    technologies: [
+                        {
+                            label: "Git",
+                            icon: 'icon fa-brands fa-git',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Github",
+                            icon: 'icon fa-brands fa-github',
+                            origin: 'fontawesome'
+                        },
+                        {
+                            label: "Postman",
+                            icon: 'postman',
+                            origin: 'local'
+                        },
+                    ]
+                },
+            ]
         }
     },
+  mounted() {
+        this.$nextTick(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const el = entry.target;
+          if (entry.isIntersecting) {
+            el.classList.remove('animate-out-view');
+            el.classList.add('animate-in-view');
+          } else {
+            el.classList.remove('animate-in-view');
+            el.classList.add('animate-out-view');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    this.$refs.cardExperienceRefs.forEach((el) => observer.observe(el));
+  });
+  },
 }
 </script>
 
 <style lang="scss" scoped>
+
     .about{
     }
-    .row-1{
+    // .content-img{
+    //     background: #000;
+    // }
+    .content-about{
+        box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
         gap: 1.5rem;
+        padding: 2.4rem;
+        
         border-radius: 20px;
+        background: var(--color-blue-dark);
+        
         .content-img{
-            flex: 1 1 25rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            .img{
-                border-radius: 10%;
-                width: 200px;
-                height: 200px;
-                aspect-ratio: 1/1;
-                background: linear-gradient(45deg, transparent, var(--main-color), transparent);
-            }
+            display: block !important;
+            // flex: 1 1 25rem;
+            // display: flex;
+            // justify-content: center;
+            // align-items: center;
+            // position: relative;
+            // .img{
+            //     border-radius: 10%;
+            //     width: 200px;
+            //     height: 200px;
+            //     aspect-ratio: 1/1;
+            //     background: linear-gradient(45deg, transparent, var(--main-color), transparent);
+            // }
         }
         .content{
             flex: 1 1 50rem;
             .box-container{
                 display: flex;
+                justify-items: left;
                 flex-wrap: wrap;
-                gap:1.5rem;
+                gap:1.6rem;
                 padding: 0.3rem 0;
                 margin-bottom: 2rem;
                 .box{
-                    flex: 1 1 20rem;
+                    // flex: 1 1 20rem;
                     display: flex;
                     span{
                         display: inline-block;
@@ -157,59 +330,39 @@ export default {
             }
         }
     }
-
-    .title{
-        margin: 5rem 0 2rem;
-    }
-
-    .row{
+    .content-experience{
         display: flex;
         flex-wrap: wrap;
         gap: 2.5rem;
         border-radius: 20px;
         justify-content: center;
     }
-    .col__experience{
-        flex: 1 1 40rem;
+
+    .content-item-experience{
+        flex: 0 1 47rem;
+        opacity: 0;
+        transform: translateX(100px);
     }
-    .card__experience{
-        background-color: var(--bg-dark-variant);
-        padding: 2.5rem 5rem;
-        border-radius: 5%;
+    .card-experience{
+        background-color: var(--secondary-color);
+        border-radius: 20px;
         border: 1px solid transparent;
-        .card__header{
+        max-height: 234px;
+        .card-experience__header{
             text-align: center;
             margin-bottom: 2rem;
-            .card__title{
-                color: var(--text-dark-900);
-                opacity: 75%;
+            .card-experience__title{
+                color: var(--bg-dark-900);
+                // opacity: 75%;
                 font-size: 2rem;
+                font-size: bold;
+                // margin-bottom: 32px;
             }
         }
-        .card__experience__container{
-            padding: 1rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            justify-content: space-around;
-            .items__container{
-                flex: 1 1 40%;
-                display: flex;
-                gap: 1rem;
-                .items__container__icon{
-                    color: var(--main-color);
-                    display: inline-block;
-                    font-size: 1.5rem;
-                    margin-top: 5px;
-                }
-                .items__container__item{   
-                }
-            }
+        .card-experience__content {
+            padding: 2.5rem 5rem;
         }
-        &:hover{
-            background-color: transparent;
-            border: 1px solid var(--bg-dark-100);
-        }
+        
     }
 
     .img-circular{
@@ -224,13 +377,15 @@ export default {
     }
 
     @media screen and (max-width: 600px) {
-        .container{
-            .row-1{
-                .content{
-                    .box-container{
-                        .box{
-                            flex: 1 1 100%;
-                        }
+        .content-about{
+            flex-flow: column;
+            .content-img {
+                display: none !important;
+            }
+            .content {
+                .box-container{
+                    .box{
+                        flex: 1 1 100%;
                     }
                 }
             }
@@ -240,8 +395,8 @@ export default {
             text-align: center;
         }
 
-        .col__experience{
-          .card__experience{
+        .content-item-experience{
+          .card-experience{
             padding: 2rem 3rem; 
           }
         }

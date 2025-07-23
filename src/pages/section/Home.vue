@@ -1,6 +1,6 @@
 <template>
     <section class="home" id="home">
-        <div class="container">
+        <div class="wrapper">
             <div class="row">
                 <div class="col__info">
                     <h5>Hola, mi nombre es</h5>
@@ -135,7 +135,7 @@ export default {
         font-family: 'Poppins', sans-serif;
         font-size: 5.5rem;
         font-weight: bold;
-        color: var(--text-dark-700);
+        color: var(--secondary-color);
     }
 
     .profession {

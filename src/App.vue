@@ -1,5 +1,5 @@
 <template>
-  <LayoutPreloader />
+  <!-- <LayoutPreloader /> -->
   <LayoutDrawer v-model="activeDrawer"/>
   <div
     class="layout"
@@ -8,14 +8,14 @@
     <router-view />
     <LayoutFooter />
   </div>
-  <div
+  <!-- <div
     v-if="windowWidth > 600"
     class="cursor-1"
   />
   <div
     v-if="windowWidth > 600"
     class="cursor-2"
-  />
+  /> -->
   <CoreAlert />
 </template>
 
@@ -23,7 +23,7 @@
   import LayoutDrawer from './pages/layout/LayoutDrawer.vue'
   import LayoutHeader from './pages/layout/LayoutHeader.vue'
   import LayoutFooter from './pages/layout/LayoutFooter.vue'
-  import LayoutPreloader from './pages/layout/LayoutPreloader.vue'
+  // import LayoutPreloader from './pages/layout/LayoutPreloader.vue'
   import CoreAlert from './components/CoreAlert.vue'
 
 export default {
@@ -32,7 +32,7 @@ export default {
     LayoutDrawer,
     LayoutFooter,
     LayoutHeader,
-    LayoutPreloader,
+    // LayoutPreloader,
     CoreAlert,
   },
   data() {
@@ -42,25 +42,25 @@ export default {
     }
   },
   mounted() {
-    let cursor1 = document.querySelector('.cursor-1')
-    let cursor2 = document.querySelector('.cursor-2')
-    window.onmousemove = (e) => {
-      cursor1.style.top = e.pageY + 'px';
-      cursor1.style.left = e.pageX + 'px';
-      cursor2.style.top = e.pageY + 'px';
-      cursor2.style.left = e.pageX + 'px';
-    }
-    let links = document.querySelectorAll('a')
-    links.forEach(link => {
-      link.onmouseenter = () => {
-        cursor1.classList.add('active')
-        cursor2.classList.add('active')
-      }
-      link.onmouseleave = () => {
-        cursor1.classList.remove('active')
-        cursor2.classList.remove('active')
-      }
-    })
+    // let cursor1 = document.querySelector('.cursor-1')
+    // let cursor2 = document.querySelector('.cursor-2')
+    // window.onmousemove = (e) => {
+    //   cursor1.style.top = e.pageY + 'px';
+    //   cursor1.style.left = e.pageX + 'px';
+    //   cursor2.style.top = e.pageY + 'px';
+    //   cursor2.style.left = e.pageX + 'px';
+    // }
+    // let links = document.querySelectorAll('a')
+    // links.forEach(link => {
+    //   link.onmouseenter = () => {
+    //     cursor1.classList.add('active')
+    //     cursor2.classList.add('active')
+    //   }
+    //   link.onmouseleave = () => {
+    //     cursor1.classList.remove('active')
+    //     cursor2.classList.remove('active')
+    //   }
+    // })
   },
 }
 </script>
@@ -71,10 +71,10 @@ export default {
 
   :root{
     // --main-color:#64FFDA;
-    --main-color:#4db5ff;
-    --secondary-color:#0CF2C8;
+    --main-color:#7CCCFB;
+    --secondary-color: #DDE6ED;
     // --bg-dark-900: #1F1B24;
-    --bg-dark-900: #0A192F;
+    --bg-dark-900: #212E40;
     // --bg-dark-100: #121212;
     --bg-dark-100: #122640;
     --bg-dark-50: #1F1B24;
@@ -83,12 +83,18 @@ export default {
     --text-dark-700: rgba( 255, 255, 255, 0.75);
     --text-dark-100: rgba( 255, 255, 255, 0.6);
     --text-dark-50: rgba( 255, 255, 255, 0.38);
+    --text-white: #ffffff;
+
+    --color-blue-medium: #526D82;
+    --color-blue-dark: #27374D;
+
+    --text-info: #9DB2BF;
 
     --container-with-lg: 90%;
     --container-with-md: 90%;
     --container-with-sm: 90%;
 
-    --transition: all 400ms ease; 
+    --transition: all 400ms ease;
   }
   
   * {
@@ -151,33 +157,47 @@ export default {
   h1 {
     font-size: 2.5rem;
   }
+  p {
+    font-size: 1.6rem;
+  }
 
-  .container {
+  .wrapper {
     width: var(--container-with-lg);
+    max-width: 1440px;
   }
 
   section > h2, section > h5 {
     color: var(--text-dark-700);
   }
 
-  .text{
+  .text {
     color: var(--text-dark-900);
-    font-size: 1.7rem;
+    // font-size: 1.7rem;
+    line-height: 25px;
   }
-  .text-light{
+
+  .text-light {
     color: var(--text-dark-100);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+    line-height: 25px;
   }
 
-  .text-light-small{
+  .text-light-small {
     color: var(--text-dark-50);
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
 
-  .title{
+  .title {
       color: var(--text-dark-700);
       font-size: 2rem;
       font-weight: bold;
+      margin-bottom: 2rem;
+  }
+
+  .subtitle {
+      color: var(--text-dark-700);
+      font-size: 1.6rem;
+      font-weight: 600;
       margin-bottom: 2rem;
   }
 
@@ -305,7 +325,7 @@ export default {
         padding: 0;
       }
 
-      .container{
+      .wrapper{
         width: var(--container-with-md);
         // margin-top: 3rem;
       }
@@ -328,7 +348,7 @@ export default {
         padding: 0;
       }
 
-      .container{
+      .wrapper{
         width: var(--container-with-sm);
         // margin-top: 2.5rem;
         //margin: auto;

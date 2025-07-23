@@ -6,7 +6,10 @@
             @mouseout="$emit('mouseout')"
             class="carrusel-item"
         >
-            <img class="carrusel-item__img" :src="slide" alt="">
+            <div style="width: 100%; height: 100%;">
+
+                <img class="carrusel-item__img" :src="slide" alt="">
+            </div>
         </div>
     </transition>
 </template>
@@ -50,12 +53,11 @@ export default {
         left: 0;
         right: 0;
         bottom: 0;
+                // width: 100%;
         &__img{
-            img {
-                object-fit: cover;
-                height:100%;
-                width:100%;
-            }
+                object-fit: contain;
+                // width:100px;
+                height: 40rem;
         }
     }
     .slide-in-enter-active,
