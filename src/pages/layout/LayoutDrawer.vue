@@ -1,5 +1,6 @@
 <template>
     <header
+    class="shadow-xl shadow-drawer"
     :class="{active: modelValue}"
     >
         <a
@@ -14,7 +15,7 @@
             <router-link to="/about" @click="closeDrawer()">Sobre mi</router-link> 
             <!-- <router-link to="/skill" @click="closeDrawer()">Tecnologías</router-link> -->
             <router-link to="/experience" @click="closeDrawer()">Resumen</router-link>
-            <router-link to="/portafolio" @click="closeDrawer()">Portafolio</router-link>
+            <router-link :class="{ active: $route.path.startsWith('/portafolio') }" to="/portafolio" @click="closeDrawer()">Portafolio</router-link>
             <router-link to="/contact" @click="closeDrawer()">Contacto</router-link>
         </nav>
         <!-- <div class="follow">
@@ -48,6 +49,12 @@ export default {
 }
 </script>
 <style scoped>
+.shadow-drawer {
+  --mi-shadow-color: rgba(15, 23, 42, 0.4);
+  box-shadow:
+    0 10px 15px -3px var(--mi-shadow-color),
+    0 4px 6px -4px var(--mi-shadow-color);
+}
     .backdrawer{
         min-height: 100vh !important;
         height: 100% !important;
@@ -65,7 +72,7 @@ export default {
         top: 0;
         left: 0;
         bottom: 0;
-        background: var(--bg-dark-100);
+        background: #0f172a;
         display: flex;
         align-items: center;
         border-end-end-radius: 40px;

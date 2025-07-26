@@ -5,6 +5,10 @@
             :class="{visibility: $route.name === 'Inicio'}"
 
         >
+            <span
+                class="sm:hidden fa-solid fa-arrow-left text-[20px] text-[var(--main-color)]"
+                @click="$router.go(-1)"
+            />
             {{ $route.name }}
         </h4>
         <div class="header__options">
@@ -61,6 +65,10 @@ export default {
             text-transform: uppercase;
             position: relative;
             font-weight: bold;
+            display: flex;
+            // justify-items: center;
+            align-items: center;
+            gap: 10px;
         &:before{
             content: '';
             position: absolute;

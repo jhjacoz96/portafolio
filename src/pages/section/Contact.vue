@@ -1,6 +1,6 @@
 <template>
     <section class="experience">
-        <div class="container">
+        <div class="wrapper flex justify-center items-center">
             <div class="row">
                 <div class="col__contact">
                     <div
@@ -15,7 +15,7 @@
                     </div>
                 </div>
                 <div class="col__form">
-                    <h3 class="title">Contactame</h3>
+                    <h3 class="title text-[var(--main-color)]">Contactame</h3>
                     <p class="text-light">Si deseas contactarme puedes dejar un mensaje y te responderé lo antes posible.</p>
                     <form
                         ref="form"
@@ -94,6 +94,7 @@ export default {
     .row{
         display: flex;
         flex-wrap: wrap;
+        max-width: 70%;
         gap: 2.5rem;
         margin-top: 3rem;
         padding: 2rem;
@@ -101,18 +102,18 @@ export default {
         justify-content: center;
     }
     .col__contact{
-        flex: 1 1 38%;
+        flex: 1 1 10%;
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 2rem;
     }
     .col__form{
-        flex: 1 1 50%;
+        flex: 1 1 40%;
     }
     .card{
         width: 30rem;
-        background-color: var(--bg-dark-variant);
+        background-color: var(--color-blue-dark);
         box-shadow: 2px 3px 12px -8px #122640;
         border-radius: 10px;
         border: 1px solid transparent;

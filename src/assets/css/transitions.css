@@ -1,8 +1,8 @@
 .expand-from-bottom {
   opacity: 0;
-  transform: scale(0);
+  transform: scale(0.7);
   transform-origin: bottom;
-  animation: expandIn 0.8s ease-out forwards;
+  animation: expandIn 1s ease-out forwards;
 }
 
 @keyframes expandIn {

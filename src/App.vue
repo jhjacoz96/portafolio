@@ -71,10 +71,12 @@ export default {
 
   :root{
     // --main-color:#64FFDA;
-    --main-color:#7CCCFB;
+    --main-color:#2cc9ff;
+    // --main-color:#7CCCFB;
     --secondary-color: #DDE6ED;
     // --bg-dark-900: #1F1B24;
-    --bg-dark-900: #212E40;
+    // --bg-dark-900: #212E40;
+    --bg-dark-900: #020617;
     // --bg-dark-100: #121212;
     --bg-dark-100: #122640;
     --bg-dark-50: #1F1B24;
@@ -86,7 +88,8 @@ export default {
     --text-white: #ffffff;
 
     --color-blue-medium: #526D82;
-    --color-blue-dark: #27374D;
+    --color-blue-dark: #0f172a;
+    --color-white: #fff;
 
     --text-info: #9DB2BF;
 
@@ -177,18 +180,19 @@ export default {
   }
 
   .text-light {
-    color: var(--text-dark-100);
+    color: var(--color-white);
+    // color: var(--text-dark-100);
     font-size: 1.6rem;
     line-height: 25px;
   }
 
   .text-light-small {
-    color: var(--text-dark-50);
+    color: var(--color-white);
     font-size: 1.6rem;
   }
 
   .title {
-      color: var(--text-dark-700);
+      color: var(--color-white);
       font-size: 2rem;
       font-weight: bold;
       margin-bottom: 2rem;
@@ -198,7 +202,7 @@ export default {
       color: var(--text-dark-700);
       font-size: 1.6rem;
       font-weight: 600;
-      margin-bottom: 2rem;
+      // margin-bottom: 2rem;
   }
 
   img{

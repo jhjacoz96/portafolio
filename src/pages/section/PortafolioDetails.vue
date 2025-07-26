@@ -1,8 +1,8 @@
 <template>
     <section class="portafolio-details">
-        <div class="container">
+        <div class="wrapper">
             <div class="row">
-                <div class="col__content">
+                <div class="col__content order-2 sm:order-1">
                     <div class="card__header">
                         <div style="display:flex; align-items: center; gap:1rem; margin-bottom: .5rem;">
                             <h3 class="title" style="margin:0;padding:0;">Acerda de {{ detail.title }}</h3>
@@ -10,6 +10,7 @@
                                 v-if="detail.url"
                                 class="btn"
                                 :href="detail.url"
+                                target="_blank"
                             >
                                 <span class="fa-solid fa-up-right-from-square"></span>
                             </a>
@@ -20,11 +21,28 @@
                             class="tag"
                         >{{ item }}</span>
                     </div>
-                    <p class="text-light">{{ detail.description }}</p>
-                    <!-- <h3 class="title" style="margin:3rem 0 2rem;padding:0;">Mis contribuiones</h3>
-                    <p class="text-light">{{ detail.contributions }}</p> -->
+
+
+                    <BaseTab>
+                        <template v-slot:description>
+                            <p class="text-light">{{ detail.description }}</p>
+                        </template>
+                        <template v-slot:contribution>
+                            <ul>
+                                <li
+                                    v-for="(contribution, keyContribution) in detail.contributionsList"
+                                    :key="keyContribution"
+                                    class="text-light decoration list-disc ml-6"
+                                >
+                                    {{contribution}}
+                                </li>
+                            </ul>
+                        </template>
+                    </BaseTab>
+
+
                 </div>
-                <div class="col__carrusel">
+                <div class="col__carrusel order-1 sm:order-2 mb-[30px]">
                     <div>
                         <PortafolioDetailsCarrusel
                             :slides="slides"
@@ -41,11 +59,13 @@
 
 <script>
 import PortafolioDetailsCarrusel from './PortafolioDetailsCarrusel'
+import BaseTab from '@/components/BaseTab'
 import { mapState, mapGetters } from 'vuex'
 export default {
     name: 'PortafolioDetails',
     components: {
         PortafolioDetailsCarrusel,
+        BaseTab,
     },
     data() {
         return {
@@ -74,10 +94,11 @@ export default {
     .row{
         display: flex;
         flex-wrap: wrap;
+
         gap: 2.5rem;
         margin-top: 3rem;
         padding: 2rem;
-        justify-content: center;
+        justify-items: center;
     }
     .col__content{
         flex: 1 1 40%;

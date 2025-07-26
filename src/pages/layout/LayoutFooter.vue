@@ -1,6 +1,7 @@
 <template>
     <footer>
-        <span>Jhon Contreras</span> | &copy; Copyright 2022
+        <!-- <span>Jhon Contreras</span> | &copy; Copyright 2022 -->
+        <span>Jhon Contreras</span>
     </footer>
 </template>
 

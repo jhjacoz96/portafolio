@@ -69,21 +69,21 @@ export default {
                             time: '2023-2025',
                             occupation: 'Developer Fullstack',
                             company: 'TheHoster',
-                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A veniam nam quaerat quae illum, in non quas dolores cupiditate est, hic suscipit vel. Repudiandae eos illum, rem id nemo repellendus?'
+                            description: 'Desarrollé más del 40 % del sistema de un SaaS para hoteles, incluyendo APIs, módulos frontend/backend e integración de IA y scrapers con Apify. Consolidé estándares técnicos que escalaron el producto y automatizaron procesos clave.'
                         },
                         {
                             icon: 'hicitty.svg',
                             time: '2022-2023',
                             occupation: 'Developer Fullstack',
                             company: 'Hicitty',
-                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A veniam nam quaerat quae illum, in non quas dolores cupiditate est, hic suscipit vel. Repudiandae eos illum, rem id nemo repellendus?'
+                            description: 'Co-creé el 50 % de una plataforma hotelera con integración de motores de reserva. Mejoré un 30 % el rendimiento en servicios críticos y desarrollé interfaces modernas basadas en Figma.'
                         },
                         {
                             time: '2021-2022',
                             iconDefault: 'item-timeline-experience.svg',
                             occupation: 'Developer Fullstack',
                             company: 'Freelances',
-                            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. A veniam nam quaerat quae illum, in non quas dolores cupiditate est, hic suscipit vel. Repudiandae eos illum, rem id nemo repellendus?'
+                            description: 'Lideré el desarrollo de 3 plataformas completas para salud, sector automotriz y e-commerce, adaptadas a cada cliente desde el modelado de negocio hasta la entrega final.'
                         },
                     ],
                 },
@@ -138,16 +138,4 @@ export default {
     border-right: 1px solid var(--color-blue-medium);
     width: 50%;
 }
-.tag {
-    display: inline-block;
-    padding: 0.2rem 0.8rem;
-    background: var(--color-blue-medium);
-    color: var(--secondary-color);
-    border-radius: 20px;
-    font-size: 1.6rem;
-    font-weight: 500;
-}
-
-
-
 </style>
