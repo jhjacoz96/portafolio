@@ -89,7 +89,7 @@ export default {
                 },
                 {
                     title: 'Educación',
-                    icon: 'item-timeline-education',
+                    iconDefault: 'item-timeline-education.svg',
                     items: [
                         {
                             time: '2014-2021',
