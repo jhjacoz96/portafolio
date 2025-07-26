@@ -17,13 +17,13 @@
                             <div class="size-[50px] rounded-full overflow-hidden shodow-xl">
                                 <img
                                     v-if="item?.iconDefault"
-                                    :src="`/assets/icons/svg/${item.iconDefault}`"
+                                    :src="`/portafolio/assets/icons/svg/${item.iconDefault}`"
                                     :alt="element.icon"
                                     class="w-[50px]"
                                 />
                                 <img
                                     v-else
-                                    :src="`/assets/img/${item.icon}`"
+                                    :src="`/portafolio/assets/img/${item.icon}`"
                                     alt="item"
                                 >
                             </div>
