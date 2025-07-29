@@ -67,21 +67,21 @@ export default {
                         {
                             icon: 'thehoster.jpg',
                             time: '2023-2025',
-                            occupation: 'Developer Fullstack',
+                            occupation: 'Developer Full-Stack',
                             company: 'TheHoster',
                             description: 'Desarrollé más del 40 % del sistema de un SaaS para hoteles, incluyendo APIs, módulos frontend/backend e integración de IA y scrapers con Apify. Consolidé estándares técnicos que escalaron el producto y automatizaron procesos clave.'
                         },
                         {
                             icon: 'hicitty.svg',
                             time: '2022-2023',
-                            occupation: 'Developer Fullstack',
+                            occupation: 'Developer Full-Stack',
                             company: 'Hicitty',
                             description: 'Co-creé el 50 % de una plataforma hotelera con integración de motores de reserva. Mejoré un 30 % el rendimiento en servicios críticos y desarrollé interfaces modernas basadas en Figma.'
                         },
                         {
                             time: '2021-2022',
                             iconDefault: 'item-timeline-experience.svg',
-                            occupation: 'Developer Fullstack',
+                            occupation: 'Developer Full-Stack',
                             company: 'Freelances',
                             description: 'Lideré el desarrollo de 3 plataformas completas para salud, sector automotriz y e-commerce, adaptadas a cada cliente desde el modelado de negocio hasta la entrega final.'
                         },

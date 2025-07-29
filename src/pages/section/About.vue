@@ -22,10 +22,10 @@
                             <span class="icon fa-solid fa-location-dot" /> <span class="text-light"> Barquisimeto, Venezuela</span>
                         </div>
                     </div>
-                    <p class="text-light">👋 ¡Hola! Soy Jhon Contreras 👨🏻‍💻, Ingeniero en Informática y desarrollador full-stack con más de 4 años de experiencia creando soluciones web robustas y escalables para startups y empresas.</p><br>
+                    <p class="text-light">👋 ¡Hola! Soy Jhon Contreras, Ingeniero en Informática y desarrollador Full-Stack con más de 4 años de experiencia creando soluciones web robustas y escalables para startups y empresas.</p><br>
                     <!-- He trabajado en sectores como hotelería, salud y e-commerce, desarrollando plataformas desde cero y optimizando su rendimiento -->
-                    <p class="text-light">🚀 Uno de mis mayores logros fue mi participación en TheHoster, donde implementé el 40% del sistema, reduje los tiempos de carga en un 30% y automatizé procesos clave que mejoraron la operación.</p><br>
-                    <p class="text-light">💡 Como ingeniero y autodidacta, disfruto aplicar buenas prácticas, aprender nuevas tecnologías y asumir desafíos que me ayuden a crecer profesionalmente.</p><br>
+                    <p class="text-light">🚀 Uno de mis mayores logros fue mi participación en TheHoster, donde implementé el 40% del sistema, reduje los tiempos de carga en un 30% y automatizé procesos clave que optimizaron la operación.</p><br>
+                    <p class="text-light">🧠 Como ingeniero y autodidacta, disfruto aplicar buenas prácticas, aprender nuevas tecnologías y asumir desafíos que impulsen mi crecimiento profesional.</p><br>
                     <p class="text-light">¿Construimos algo juntos? 💻✨</p>
                     <div class="content-action">
                         <span class="icon fa-brands fas-graduation-cap"></span>
@@ -42,7 +42,7 @@
             </div>
             <div class="">
                 <h3 class="title mt-[70px] mb-[20px] slide-in-left">Habilidades</h3>
-                <p class="text-light mb-[20px] expand-from-bottom">💡 A lo largo de mi carrera he desarrollado habilidades sólidas en desarrollo web full-stack, destacando en la creación de interfaces modernas con Vuejs y Tailwind, así como en la construcción de APIs robustas usando Laravel Nodejs (expressjs).</p>
+                <p class="text-light mb-[20px] expand-from-bottom">💡 A lo largo de mi carrera he desarrollado habilidades sólidas en el desarrollo web full-stack, destacando en la creación de interfaces modernas con Vue.js y Tailwind CSS, así como en la construcción de APIs robustas con Laravel y Node.js usando Express.js).</p>
             </div>
             <div class="content-experience">
                 <div
@@ -67,7 +67,7 @@
                                         <div class="flex items-center flex-1">
                                             <template v-if="technology.origin === 'local'">
                                                 <img
-                                                    :src="`/assets/icons/svg/${technology.icon}.svg`"
+                                                    :src="`/portafolio/assets/icons/svg/${technology.icon}.svg`"
                                                     :alt="technology.icon"
                                                     class="w-[30px]"
                                                 />
@@ -110,15 +110,15 @@ export default {
             cards: [1, 2, 3, 4],
             technologyStack: [
                 {
-                    label: 'FrontEnd',
+                    label: 'Front-end',
                     technologies: [
                         {
-                            label: "Html",
+                            label: "HTML",
                             icon: 'icon fa-brands fa-html5',
                             origin: 'fontawesome'
                         },
                         {
-                            label: "Css",
+                            label: "CSS",
                             icon: 'icon fa-brands fa-css3',
                             origin: 'fontawesome'
                         },
@@ -128,7 +128,7 @@ export default {
                             origin: 'local'
                         },
                         {
-                            label: "Javascript",
+                            label: "JavaScript",
                             icon: 'icon fa-brands fa-js',
                             origin: 'fontawesome'
                         },
@@ -138,7 +138,7 @@ export default {
                             origin: 'local'
                         },
                         {
-                            label: "Vuejs",
+                            label: "Vue.js",
                             icon: 'icon fa-brands fa-vuejs',
                             origin: 'fontawesome'
                         },
@@ -150,10 +150,10 @@ export default {
                     ]
                 },
                 {
-                    label: 'BackEnd',
+                    label: 'Back-end',
                     technologies: [
                         {
-                            label: "Php",
+                            label: "PHP",
                             icon: 'icon fa-brands fa-php',
                             origin: 'fontawesome'
                         },
@@ -163,12 +163,12 @@ export default {
                             origin: 'fontawesome'
                         },
                         {
-                            label: "Nodejs",
+                            label: "Node.js",
                             icon: 'icon fa-brands fa-node-js',
                             origin: 'fontawesome'
                         },
                         {
-                            label: "Expressjs",
+                            label: "Express.js",
                             icon: 'express',
                             origin: 'local'
                         },
@@ -195,7 +195,7 @@ export default {
                     ]
                 },
                 {
-                    label: 'Explorando nuevas tecnologías',
+                    label: 'Aprendiendo y explorando',
                     technologies: [
                         {
                             label: "React",

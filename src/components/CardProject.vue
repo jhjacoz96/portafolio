@@ -6,16 +6,17 @@
         <div class="project-card__preview p-2 w-full h-[232px]">
           <div
             class="project-card__gradient rounded-[20px] w-full h-full flex items-center justify-center"
-            :style="`background: radial-gradient(ellipse at top left, ${projectData?.colorCore} 0%, ${projectData?.colorCore} 70%, #ffffff 100%)`"
+            style="background: linear-gradient(145deg, #5e3f92, #a47cc2, #c1a8e6);"
           >
-            <div class="project-card__image-wrapper w-[290px] h-[150px]  shadow-xl relative bg-white">
+            <!-- :style="`background: radial-gradient(ellipse at top left, ${projectData?.colorCore} 0%, ${projectData?.colorCore} 70%, #ffffff 100%)`" -->
+            <div class="project-card__image-wrapper w-[290px] h-[150px] relative bg-white shadow-2xl">
                 <span class="tag absolute -top-[14px] left-[10px] z-[100]">Fullstack</span>
                 <!-- <img
                     class="w-full h-full  object-"
                     :src="projectData?.img?.[0]"
                     alt="Proyecto TheHoster"
                 /> -->
-                <div class="w-full h-full bg-contain  bg-center bg-no-repeat" :style="`background-image: url('${projectData?.img?.[0]}')`"></div>
+                <div class="image-wrapper w-full h-full bg-contain  bg-center bg-no-repeat" :style="`background-image: url('${projectData?.img?.[0]}')`"></div>
             </div>
           </div>
         </div>
@@ -51,6 +52,19 @@ export default {
 <style scoped>
 .project-card {
   /* estructura general del card */
+  &:hover {
+    .project-card__image-wrapper {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  &:not(:hover) {
+    .project-card__image-wrapper {
+      transform: scale(1);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  
 }
 
 .project-card__preview {

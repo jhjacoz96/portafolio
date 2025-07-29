@@ -23,7 +23,7 @@ export default new Vuex.Store({
                 type: 'Aplicación web',
                 process: '',
                 url: 'https://thehoster.io', description: 'Es una plataforma SaaS B2B dirigida a hoteles en España. Su objetivo es ofrecer una solución integral para que los hoteles partners puedan administrar su reputación online en OTAs (como Booking, Google, Expedia, Tripadvisor), gestionar servicios internos, personalizar su propia WebApp y mejorar la experiencia del huésped. Una solución digital todo-en-uno, lista para usar y enfocada en optimizar la operación hotelera desde una sola plataforma.',
-                skill: ['Vuejs', 'Tailwind', 'Laravel', 'Mysql', 'Nodejs', 'Expressjs', 'MongoDB'],
+                skill: ['Vue.js', 'Tailwind', 'Laravel', 'Mysql', 'Node.js', 'Express.js', 'MongoDB'],
                 contributionsDescription: 'Como Full-Stack Developer líder, participé en la arquitectura base del sistema y desarrollé más del 40 % del producto.',
                 // contributionsList: ['Construcción de +8 módulos clave (reviews, experiencias, lugares, configuración web, entre otros).', 'Desarrollo y documentación de APIs REST para la gestión de reviews multicanal, integrando scrapers mediante Apify.', 'Implementación de funcionalidades con IA generativa para automatizar procesos en distintos módulos.', 'Definición de estándares técnicos y patrones de desarrollo para asegurar escalabilidad.', 'Integración de la APIs externas para sincronización.'],
                 contributionsList: [
@@ -41,7 +41,7 @@ export default new Vuex.Store({
                 // colorCore: '#FFD453',
                 img: [
                     'https://res.cloudinary.com/ddxgl2pr9/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1753295003/Portafolio/Webapp_07.png_v7anbm.png',
-                    'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1752868444/Portafolio/Webapp_01_pblecono6.png',
+                    'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1752868444/Portafolio/Webapp_01_pbleo6.png',
                     'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1752868444/Portafolio/Webapp_02_ua9hmj.png',
                     'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1752868446/Portafolio/Webapp_03_q63036.png',
                     'https://res.cloudinary.com/ddxgl2pr9/image/upload/v1752868447/Portafolio/Webapp_04_xh9lo3.png',
@@ -53,7 +53,7 @@ export default new Vuex.Store({
                 type: 'Aplicación web (PWA)',
                 process: '',
                 url: 'https://thehoster.io', description: 'La WebApp de TheHoster es una aplicación web white-label diseñada para que cada hotel pueda ofrecer a sus huéspedes una experiencia digital personalizada desde cualquier dispositivo. La WebApp permite visualizar servicios, experiencias turísticas, productos, promociones y facilita la interacción con el hotel durante la estancia. Todo esto se adapta a la identidad visual del hotel y se gestiona fácilmente desde el backoffice.',
-                skill: ['Vuejs', 'Tailwind', 'Laravel', 'Mysql', 'Nodejs', 'Expressjs', 'MongoDB'],
+                skill: ['Vue.js', 'Tailwind', 'Laravel', 'Mysql', 'Node.js', 'Express.js', 'MongoDB'],
                 contributions: '',
                 contributionsList: [
                     '🔧 Desarrollo completo de las APIs Services y Reviews, incluyendo endpoints, documentación y conexión con scrapers (Apify) y APIs externas (Viator)',
@@ -80,7 +80,7 @@ export default new Vuex.Store({
                 process: '',
                 url: 'https://hicitty.com',
                 description: 'Esta plataforma va dirigida al sector turistico en España, donde se le ofrece a los turistas la posibilidad planificar las mejores experiencias mediante la reserva de actividades y servicios más demandados que ofrecen los distintos proveedores afiliados. Posee un panel administrativo (Personalizado para cada rol) que permite getinar toda plataforma.',
-                skill: ['Vuejs', 'Tailwind', 'Laravel', 'Mysql'],
+                skill: ['Vue.js', 'Tailwind', 'Laravel', 'Mysql'],
                 contributions: '',
                 contributionsList: [
                     '🧩 Participé en la construcción del 50 % de la plataforma, incluyendo frontend y backend', 
@@ -135,7 +135,7 @@ export default new Vuex.Store({
                 process: '',
                 url: '',
                 description: 'KA-THANI es una aplicación web desarrollada para centros de salud en Ecuador. Su propósito es facilitar la gestión de fichas familiares, obstétricas y neonatales de pacientes afiliados, permitiendo al personal médico realizar seguimiento y control clínico de manera estructurada. Además, cuenta con un módulo para administración de datos básicos del centro y generación de reportes estadísticos exportables en PDF.',
-                skill: ['Vuejs', 'Vuetify', 'Laravel', 'Mysql'],
+                skill: ['Vue.js', 'Vuetify', 'Laravel', 'Mysql'],
                 contributions: '',
                 contributionsList: [
                     '🧩 Diseñé y desarrollé la aplicación completa, incluyendo modelado de datos, backend y frontend',
@@ -163,7 +163,7 @@ export default new Vuex.Store({
                 process: '',
                 url: '',
                 description: 'Sigo es una aplicación web encargada gestionar pedidos, compras, seguimiento de ventas y control de inventario, además de esto, permite administrar usuarios, roles, productos y categorías. Los clientes pueden ingresar y ver el catálago disponible y realizar pedidos mediante un carrito de compra.',
-                skill: ['Vuejs', 'Vuetify', 'Nodejs', 'Expressjs', 'Mysql'],
+                skill: ['Vue.js', 'Vuetify', 'Node.js', 'Express.js', 'Mysql'],
                 contributions: ''
             },
         ],

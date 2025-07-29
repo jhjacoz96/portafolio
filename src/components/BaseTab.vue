@@ -8,11 +8,11 @@
         >
             <button
                 class="inline-flex items-center justify-center p-4 border-b-2 rounded-t-lg group space-x-2"
-                :class="tabValue === tab.value ? 'text-blue-600 border-blue-600' : 'hover:text-gray-600 hover:border-gray-300 border-transparent'"
+              :class="tabValue === tab.value ? 'text-[var(--main-color)] border-[var(--main-color)]' : 'hover:text-gray-600 hover:border-gray-300 border-transparent'"
                 @click="tabValue = tab.value"
             >
                 <span class="ico text-[14px]" :class="tab.icon"></span>
-                <span class="text-light" :class="tabValue === tab.value ? 'text-blue-600' : ''">{{ tab.label }}</span>
+                <span class="text-light" :class="tabValue === tab.value ? 'text-[var(--main-color)]' : ''">{{ tab.label }}</span>
             </button>
         </li>
     </ul>

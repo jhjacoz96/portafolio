@@ -52,7 +52,7 @@ export default {
             newTextDelay: 1000,
             typeArrayIndex: 0,
             charIndex: 0,
-            info: 'Diseñar y crear softaware es mi pasión',
+            info: 'Diseñar y crear software es mi pasión',
         }
     },
     methods: {
